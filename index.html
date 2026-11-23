@@ -6,57 +6,13 @@
   <title>2026 九州 11 日賞楓旅遊手札｜吉卜力水彩繪本風</title>
 
   <!-- iOS & Android 加入主畫面 App 設定（滿版無白邊圖示） -->
-  <link rel="apple-touch-icon" href="icon.png">
-  <link rel="icon" type="image/png" href="icon.png">
-  <link rel="manifest" href="">
+  <link rel="manifest" href="./manifest.json">
+  <link rel="icon" type="image/png" href="./icon.png">
+  <link rel="apple-touch-icon" href="./icon.png">
   <meta name="theme-color" content="#C84B31">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
   <meta name="apple-mobile-web-app-title" content="九州賞楓2026">
-  <script>
-    (function setupDynamicManifest() {
-      try {
-        const iconUrl = new URL('icon.png', document.baseURI).href;
-        const manifest = {
-          name: '2026 九州 11 日賞楓旅遊手札',
-          short_name: '九州賞楓2026',
-          start_url: new URL('./', document.baseURI).href,
-          display: 'standalone',
-          background_color: '#FAF6F0',
-          theme_color: '#C84B31',
-          icons: [
-            {
-              src: iconUrl,
-              sizes: '512x512',
-              type: 'image/png',
-              purpose: 'any maskable'
-            },
-            {
-              src: iconUrl,
-              sizes: '192x192',
-              type: 'image/png',
-              purpose: 'any maskable'
-            }
-          ]
-        };
-        const blob = new Blob([JSON.stringify(manifest)], { type: 'application/manifest+json' });
-        const manifestUrl = URL.createObjectURL(blob);
-        let link = document.querySelector('link[rel="manifest"]');
-        if (!link) {
-          link = document.createElement('link');
-          link.rel = 'manifest';
-          document.head.appendChild(link);
-        }
-        link.href = manifestUrl;
-      } catch (e) {}
-    })();
-
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('load', () => {
-        navigator.serviceWorker.register('./sw.js').catch(() => {});
-      });
-    }
-  </script>
 
   <!-- 引入 Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -3934,648 +3890,302 @@
           },
           {
             name: "芋伝説",
-            location: "門司港懷舊區（地瓜甜點專門店）",
-            feature: "特色為現烤蜜地瓜「焼き芋」與地瓜霜淇淋。"
+            location: "門司港懷舊區／海峽 Plaza 周邊（地瓜甜點專門店）",
+            feature: "招牌為香甜濃郁的蜜地瓜「大学いも」與地瓜霜淇淋。"
           },
           {
-            name: "王様のたまご",
-            location: "門司港レトロ 海峽 Plaza 內（新鮮雞蛋甜點專賣店）",
-            feature: "招牌為濃郁滑順「王様のプリン」布丁與蛋捲點心。"
+            name: "門司港レトロ ハイカラ屋",
+            location: "海峽 Plaza 內",
+            feature: "經典復古香蕉口味霜淇淋，人均約 400 日圓。"
           },
           {
             name: "ミルクホール門司港",
-            location: "門司港レトロ",
-            feature: "大正浪漫復古布丁，人均約 500 日圓。"
+            location: "門司港懷舊地區內",
+            feature: "懷舊風昭和焦糖硬布丁，人均約 550 日圓。"
           },
           {
-            name: "菓匠きくたろう アミュプラザ小倉店",
-            location: "JR 小倉站 1F（17:35–19:00 小倉購物時段）",
-            feature: "手握串糰子與蕨餅飲，人均約 450 日圓。"
+            name: "唐戸市場 柳川水産 河豚炸物",
+            location: "唐戶市場內",
+            feature: "現炸香酥河豚塊與生魚片握壽司，人均約 500 日圓。"
           },
           {
-            name: "お菓子のつる平 アミュプラザ小倉店",
-            location: "JR 小倉站內（17:35–19:00 小倉購物時段）",
-            feature: "小倉老牌年輪蛋糕夾心『ぽんつく』，人均約 200 日圓。"
+            name: "シロヤベーカリー 小倉店",
+            location: "小倉站南口京町銀天街",
+            feature: "北九州靈魂煉乳夾心餐包，人均約 150 日圓。"
           }
         ],
         souvenirs: [
-          { item: "門司港バナナ草餅", shop: "門司港レトロ 海峡プラザ 1F（北九州市門司区港町）" },
-          { item: "明月堂 九州伊勢海老仙貝", shop: "海峡プラザ 赤れんが物産館（北九州市門司区港町）" },
-          { item: "下関ふぐ煎餅", shop: "唐戸市場 1F 魚市物産部（山口県下関市唐戸町）" },
-          { item: "門司港レトロ焼咖哩煎餅", shop: "JR 門司港駅 おみやげ街道（北九州市門司区西海岸）" },
-          { item: "小倉井筒屋限定 九州銘菓禮盒", shop: "小倉井筒屋 本館地下食品館（北九州市小倉北区船場町）" }
+          { item: "門司港焼きカレー煎餅", shop: "門司港レトロ 海峡プラザ（北九州市門司区港町）" },
+          { item: "小倉牛咖哩調理包", shop: "小倉駅 VIERRA小倉 銘品蔵（北九州市小倉北区浅野）" },
+          { item: "下関河豚煎餅（ふぐせんべい）", shop: "唐戸市場 場內物産店（山口県下関市唐戸町）" },
+          { item: "門司港香蕉蛋糕禮盒", shop: "門司港レトロ 観光物産館（門司港懷舊地區）" },
+          { item: "北九州空港限定 銘菓（管制區 SKY DUTY FREE 維持直接免稅）", shop: "北九州空港 2F 総合売店 ＆ 國際線 SKY DUTY FREE" }
         ],
         operationalNotes: [
           {
-            target: "北九州機場 2026/10/25 起冬季巴士時刻表重要提醒",
-            note: "北九州機場直達巴士時刻表隨季節航空班次調整（2026 年 10 月 25 日起實施冬季時刻表；參考現行時刻表晚間自小倉駅バスセンター發車之直達車為 19:40 發／20:25 抵與 20:55 發／21:40 抵，而 20:43 與 20:46 為「中谷經由」普通路線巴士，車程約 1 小時），出發前 1 週務必至西鐵巴士官網核對 12 月實際直達車班次；若直達車發車時間為 20:55 左右，建議 19:00 燒肉晚餐準時入座並於 20:15 準時結帳出發，以預留充足機場 1 樓免稅掃描與報到時間。"
+            target: "プリンセスピピ門司港（週五午間 15:00 L.O.・勿拖延）",
+            note: "週一～週五午餐營業至 15:30（L.O. 15:00），週五晚餐時段僅提供事前預約制包場／套餐（無一般散客晚餐營業），故安排於 13:45–15:00 用餐正為合適，步行穿越隧道時須留意時間勿拖延過晚。"
           },
           {
-            target: "プリンセスピピ門司港",
-            note: "週五午餐營業時間為 11:00–15:30（L.O. 15:00），請於 14:30 前抵達入座。"
+            target: "唐戶市場「活きいき馬関街」",
+            note: "僅於週五、週六（10:00–15:00）及週日・國定假日（08:00–15:00）舉辦，Day 11 適逢週五，11:10 抵達正值熱鬧開市時段。"
           },
           {
-            target: "焼肉酒場 たんがほるもん / 焼肉の龍園 小倉本店",
-            note: "12 月 11 日（週五）適逢日本忘年會旺季，兩家名店均強烈建議事先透過官方網站或訂位平台預訂 19:00 座位。"
+            target: "小倉晚餐雙方案（たんがほるもん / 焼肉の龍園）",
+            note: "「焼肉酒場 たんがほるもん」營業至 24:00（週五・六 L.O. 23:00，全年無休）；「焼肉の龍園 小倉本店」營業至 24:00（不定休），建議事先線上預約 19:00 時段以確保準時入座。"
+          },
+          {
+            target: "Day 11 北九州機場（KKJ）1 樓終端機與冬季巴士雙鐵則",
+            note: "① 北九州機場巴士時刻隨春秋夏冬季節微調（2026 年 10 月 25 日起適用冬季時刻表，如小倉駅バスセンター發車直達車 19:40 發/20:25 抵、20:55 發/21:40 抵；20:43 與 20:46 為中谷經由班次約 1 小時），出發前請上西鐵巴士北九州官網核對最新時刻。② 抵達北九州機場後，嚴格遵守「先掃護照、再託運」鐵則：託運前先到 1 樓海關終端機掃描護照確認免稅（KKJ 不支援 VJW 手機線上核銷、亦無現金退稅），綠燈再託運、紅燈持實物與收據給海關查驗。"
           }
         ]
       }
     ];
 
     /* ==========================================================================
-       二、精準比對引擎：將每張行程卡片綁定專屬「注意事項」「周邊小吃」「必買伴手禮」
-       ========================================================================== */
-    const JMA_FORECAST_LINKS = {
-      1: {
-        region: "佐賀縣（Saga）",
-        url: "https://www.jma.go.jp/bosai/forecast/#area_type=offices&area_code=410000"
-      },
-      2: {
-        region: "熊本縣（Kumamoto）",
-        url: "https://www.jma.go.jp/bosai/forecast/#area_type=offices&area_code=430000"
-      },
-      3: {
-        region: "熊本縣・南阿蘇（Kumamoto）",
-        url: "https://www.jma.go.jp/bosai/forecast/#area_type=offices&area_code=430000"
-      },
-      4: {
-        region: "大分縣・由布院（Oita）",
-        url: "https://www.jma.go.jp/bosai/forecast/#area_type=offices&area_code=440000"
-      },
-      5: {
-        region: "大分縣・別府（Oita）",
-        url: "https://www.jma.go.jp/bosai/forecast/#area_type=offices&area_code=440000"
-      },
-      6: {
-        region: "福岡縣・原鶴（Fukuoka）",
-        url: "https://www.jma.go.jp/bosai/forecast/#area_type=offices&area_code=400000"
-      },
-      7: {
-        region: "福岡縣・糸島（Fukuoka）",
-        url: "https://www.jma.go.jp/bosai/forecast/#area_type=offices&area_code=400000"
-      },
-      8: {
-        region: "福岡縣・柳川・太宰府（Fukuoka）",
-        url: "https://www.jma.go.jp/bosai/forecast/#area_type=offices&area_code=400000"
-      },
-      9: {
-        region: "福岡縣・福岡市（Fukuoka）",
-        url: "https://www.jma.go.jp/bosai/forecast/#area_type=offices&area_code=400000"
-      },
-      10: {
-        region: "山口縣・下關（Yamaguchi）",
-        url: "https://www.jma.go.jp/bosai/forecast/#area_type=offices&area_code=350000"
-      },
-      11: {
-        region: "山口縣・下關（Yamaguchi）",
-        url: "https://www.jma.go.jp/bosai/forecast/#area_type=offices&area_code=350000"
-      }
-    };
-
-    // 精準對應表：僅綁定與單一時間軸卡片直接相關的注意事項、周邊小吃、必買伴手禮
-    const ACTIVITY_CONTEXT_MAP = {
-      // Day 1
-      "d1-t3": { notes: [0] }, // 佐賀牛レストラン 季楽 本店
-      "d1-t7": { notes: [1], snacks: [0], souvenirs: [3] }, // 武雄神社 → 武雄市圖書館（只顯示武雄燒陶器文創小物）
-      "d1-t8": { snacks: [1], souvenirs: [0, 1, 2, 4] }, // 武雄温泉 京都屋（武雄溫泉街／武雄温泉駅周邊伴手禮與樓門冰菓）
-      "d1-t9": { notes: [3] }, // 居酒屋 甚八
-      "d1-t10": { notes: [2] }, // 御船山樂園
-      "d1-t11": { notes: [4] }, // 開泉食堂
-
-      // Day 2
-      "d2-t3": { snacks: [0] }, // 水前寺成趣園
-      "d2-t4": { notes: [1] }, // 熊本拉麵豚美
-      "d2-t6": { snacks: [1, 3, 4, 5], souvenirs: [1, 2] }, // 熊本城・城彩苑
-      "d2-t8": { snacks: [2], souvenirs: [0, 3, 4] }, // 上通・下通商圈與新市街
-      "d2-t9": { notes: [0] }, // 勝烈亭 新市街本店
-      "d2-t10": { snacks: [2], souvenirs: [0, 3] }, // 上通・下通商圈晚間散策
-
-      // Day 3
-      "d3-t3": { souvenirs: [2] }, // 上色見熊野座神社（高森町）
-      "d3-t5": { notes: [0] }, // 高千穂牛レストラン 和
-      "d3-t6": { notes: [1], souvenirs: [1] }, // 高千穗峽
-      "d3-t8": { souvenirs: [0, 3, 4] }, // LA VISTA 南阿蘇（南阿蘇久石）
-
-      // Day 4
-      "d4-t2": { notes: [0] }, // 阿蘇山中岳火口・草千里濱
-      "d4-t3": { notes: [2] }, // 阿蘇はなびし
-      "d4-t5": { notes: [1] }, // 九重「夢」大吊橋
-      "d4-t8": { snacks: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10], souvenirs: [0, 1, 2, 3, 4] }, // 湯布院湯之坪街道 & 童話村
-
-      // Day 5
-      "d5-t4": { notes: [0] }, // 九州自然動物園
-      "d5-t8": { notes: [1] }, // 亀正くるくる寿司 優先登記候位
-      "d5-t10": { notes: [4], souvenirs: [2] }, // JR 別府站 WANDER COMPASS BEPPU
-      "d5-t12": { notes: [1, 2], snacks: [0, 1] }, // 地獄蒸し工房 鉄輪 ＆ 亀正くるくる寿司
-      "d5-t13": { notes: [4], snacks: [0, 1, 2, 3, 4, 5, 6], souvenirs: [0, 1] }, // 別府地獄巡禮
-      "d5-t15": { souvenirs: [3, 4] }, // 別府塔（北浜・別府市區）
-      "d5-t18": { notes: [3] }, // チョロ松 本店
-
-      // Day 6
-      "d6-t5": { notes: [1] }, // 天雲龍
-      "d6-t10": { snacks: [0, 1, 2], souvenirs: [1, 4] }, // 秋月城跡
-      "d6-t12": { souvenirs: [0, 2, 3] }, // ホテルパーレンス小野屋（原鶴溫泉）
-      "d6-t14": { notes: [0] }, // 居酒屋 原鶴 八兵衛
-
-      // Day 7
-      "d7-t3": { notes: [0] }, // 雷山千如寺大悲王院
-      "d7-t5": { notes: [1] }, // 一蘭之森
-      "d7-t7": { notes: [3] }, // 糸島海鮮堂 二見ヶ浦本店
-      "d7-t8": { souvenirs: [1] }, // 糸島海岸線與櫻井二見浦夫婦岩
-      "d7-t12": { souvenirs: [0, 2, 4] }, // 博多デイトス / 博多站
-      "d7-t13": { souvenirs: [0, 2, 3, 4] }, // JR 博多城
-      "d7-t14": { snacks: [0, 1, 2] }, // 博多運河城
-      "d7-t15": { notes: [2] }, // すみ劇場 むさし坐
-
-      // Day 8
-      "d8-t2": { notes: [4] }, // 原飯店寄放行李
-      "d8-t4": { snackGroupIdx: 0, souvenirs: [4] }, // 博多百貨商圈（只顯示博多阪急可買伴手禮 & 博多 6 樣小吃）
-      "d8-t7": { notes: [1] }, // 元祖 本吉屋 本店
-      "d8-t8": { notes: [1] }, // 柳川遊船（松月乘船場）
-      "d8-t9": { snackGroupIdx: 1, souvenirs: [3] }, // 柳川沖端水鄉老街與市區散策（只顯示柳川沖端 8 樣小吃 & 柳川伴手禮）
-      "d8-t11": { notes: [2, 3], snackGroupIdx: 2, souvenirs: [0, 2] }, // 太宰府天滿宮日間賞楓（只顯示太宰府參道 5 樣小吃 & 太宰府伴手禮）
-      "d8-t12": { notes: [0] }, // 和牛めんたい 神楽
-      "d8-t13": { notes: [5] }, // 社區巴士「まほろば号」前往竈門神社
-      "d8-t14": { notes: [5], souvenirs: [1] }, // 寶滿宮竈門神社夜間賞楓點燈
-      "d8-t16": { snackGroupIdx: 3 }, // 天神百貨商圈逛街（只顯示天神百貨商圈 5 樣小吃）
-      "d8-t17": { snackGroupIdx: 4 }, // 天神屋台街（只顯示天神屋台街 9 間推薦）
-      "d8-t18": { notes: [4] }, // 領回寄放行李
-      "d8-t19": { notes: [4] }, // Grand Prime HAKATA HOTEL 22:00 最晚入住
-
-      // Day 9
-      "d9-t3": { snacks: [0, 1, 2, 3, 4, 5, 6, 7, 8], souvenirs: [0, 1] }, // 天神百貨商圈散策
-      "d9-t4": { notes: [2] }, // 麵屋兼虎 天神本店
-      "d9-t5": { notes: [0], souvenirs: [2] }, // teamLab Forest Fukuoka
-      "d9-t6": { souvenirs: [3] }, // 福岡塔
-      "d9-t8": { notes: [1] }, // 博多水炊鍋専門 橙
-      "d9-t11": { notes: [3] }, // 博多もつ鍋 徳永屋 総本店
-
-      // Day 10
-      "d10-t2": { snacks: [12, 13] }, // 博多車站百貨商圈集中採購
-      "d10-t4": { souvenirs: [3] }, // JR 小倉站
-      "d10-t6": { snacks: [0, 1, 2, 3, 4, 5, 6, 7], souvenirs: [0, 1, 4] }, // 小倉魚町銀天街與旦過市場老街散策
-      "d10-t7": { snacks: [8, 9, 10, 11] }, // 小倉城天守閣・小倉城庭園與勝山公園
-      "d10-t8": { notes: [1] }, // JR 八幡站
-      "d10-t9": { notes: [1] }, // 皿倉山纜車
-      "d10-t10": { notes: [1] }, // 皿倉山山頂展望台
-      "d10-t11": { notes: [1] }, // 皿倉山下山
-      "d10-t14": { souvenirs: [2] }, // 星野「リゾナーレ下関」
-      "d10-t15": { notes: [2] }, // お福 下関店
-      "d10-t17": { notes: [0] }, // おかもと鮮魚店
-
-      // Day 11
-      "d11-t3": { souvenirs: [2] }, // 唐戶市場
-      "d11-t7": { notes: [1] }, // プリンセスピピ門司港
-      "d11-t8": { snacks: [0, 1, 2, 3, 4, 5, 6, 7, 8], souvenirs: [0, 1, 3] }, // 門司港懷舊地區
-      "d11-t10": { snacks: [9, 10], souvenirs: [4] }, // 小倉站周邊商圈最後購物散策
-      "d11-t11": { notes: [2] }, // 焼肉酒場 たんがほるもん / 焼肉の龍園
-      "d11-t12": { notes: [0] }, // 小倉駅バスセンター搭北九州機場直達巴士
-      "d11-t13": { notes: [0] } // 北九州機場（KKJ）
-    };
-
-    function getActivityContextData(dayObj, item) {
-      const mapping = ACTIVITY_CONTEXT_MAP[item.id] || {};
-      const notes = (mapping.notes || [])
-        .map(idx => (dayObj.operationalNotes || [])[idx])
-        .filter(Boolean);
-
-      let snacks = [];
-      if (typeof mapping.snackGroupIdx === 'number' && Array.isArray(dayObj.snackGroups)) {
-        const grp = dayObj.snackGroups[mapping.snackGroupIdx];
-        if (grp && Array.isArray(grp.items)) {
-          snacks = grp.items;
-        }
-      } else if (Array.isArray(mapping.snacks) && Array.isArray(dayObj.streetSnacks)) {
-        snacks = mapping.snacks
-          .map(idx => dayObj.streetSnacks[idx])
-          .filter(Boolean);
-      }
-
-      const souvenirs = (mapping.souvenirs || [])
-        .map(idx => (dayObj.souvenirs || [])[idx])
-        .filter(Boolean);
-
-      return { notes, snacks, souvenirs };
-    }
-
-    /* ==========================================================================
-       三、LocalStorage 狀態與記帳系統核心邏輯（含付款方式管理 & 雙幣統計）
+       二、狀態與 LocalStorage 單機記帳架構（含付款方式管理 & 自由記帳）
        ========================================================================== */
     const STORAGE_KEYS = {
-      EXPENSES: 'kyushu2026_expenses_v1',
+      EXPENSES: 'kyushu2026_expenses_v2',
       CATEGORIES: 'kyushu2026_categories_v1',
-      PAYMENT_METHODS: 'kyushu2026_payment_methods_v1',
-      EXCHANGE_RATE: 'kyushu2026_exchange_rate_v1',
-      LEAVES_ENABLED: 'kyushu2026_leaves_enabled_v1'
+      PAYMENTS: 'kyushu2026_payments_v1',
+      RATE: 'kyushu2026_rate_v1',
+      LEAVES: 'kyushu2026_leaves_v1'
     };
 
-    const DEFAULT_CATEGORIES = [
-      '美食餐飲',
-      '交通停車',
-      '門票體驗',
-      '伴手禮購物',
-      '住宿費用',
-      '其他'
-    ];
-    const FALLBACK_CATEGORY = '其他';
+    const DEFAULT_CATEGORIES = ['餐飲', '交通', '住宿', '門票', '購物', '其他'];
+    const DEFAULT_PAYMENTS = ['現金 (JPY)', '信用卡', '交通IC卡 (Suica/ICOCA)', 'PayPay / 電子支付', '其他'];
 
-    const DEFAULT_PAYMENT_METHODS = [
-      '現金',
-      '信用卡',
-      '交通IC卡',
-      '行動支付',
-      '其他'
-    ];
-    const FALLBACK_PAYMENT_METHOD = '其他';
-
-    let state = {
+    let appState = {
       activeTab: 'itinerary',
       selectedDay: 1,
       expenses: [],
       categories: [...DEFAULT_CATEGORIES],
-      paymentMethods: [...DEFAULT_PAYMENT_METHODS],
-      exchangeRate: 0.215,
-      rateSource: '即時匯率',
-      selectedExpenseCategoryFilter: 'ALL',
-      selectedExpensePaymentFilter: 'ALL',
-      activeActivityContext: null, // { day, activityId, activityTitle }
-      weatherCache: {},
-      leavesEnabled: true
+      payments: [...DEFAULT_PAYMENTS],
+      selectedFilterCategory: '全部',
+      selectedFilterPayment: '全部',
+      exchangeRate: 0.2150,
+      rateSourceText: '預設匯率',
+      leavesEnabled: true,
+      currentActModal: {
+        day: 1,
+        activityId: '',
+        activityTitle: ''
+      }
     };
 
-    // 載入 LocalStorage 資料
     function loadAppState() {
       try {
-        const rawExpenses = localStorage.getItem(STORAGE_KEYS.EXPENSES);
-        if (rawExpenses) {
-          const parsed = JSON.parse(rawExpenses);
+        const savedExp = localStorage.getItem(STORAGE_KEYS.EXPENSES);
+        if (savedExp) {
+          const parsed = JSON.parse(savedExp);
           if (Array.isArray(parsed)) {
-            // 相容性處理：舊有紀錄若無 paymentMethod 欄位，自動補上「現金」
-            state.expenses = parsed.map(item => ({
+            appState.expenses = parsed.map(item => ({
               ...item,
-              paymentMethod: (item.paymentMethod && String(item.paymentMethod).trim()) ? String(item.paymentMethod).trim() : '現金'
+              paymentMethod: item.paymentMethod || '現金 (JPY)'
             }));
           }
         }
-
-        const rawCats = localStorage.getItem(STORAGE_KEYS.CATEGORIES);
-        if (rawCats) {
-          const parsedCats = JSON.parse(rawCats);
-          if (Array.isArray(parsedCats) && parsedCats.length > 0) {
-            state.categories = parsedCats;
+        const savedCat = localStorage.getItem(STORAGE_KEYS.CATEGORIES);
+        if (savedCat) {
+          const parsedCat = JSON.parse(savedCat);
+          if (Array.isArray(parsedCat) && parsedCat.length > 0) {
+            appState.categories = parsedCat;
           }
         }
-        if (!state.categories.includes(FALLBACK_CATEGORY)) {
-          state.categories.push(FALLBACK_CATEGORY);
-        }
-
-        const rawPays = localStorage.getItem(STORAGE_KEYS.PAYMENT_METHODS);
-        if (rawPays) {
-          const parsedPays = JSON.parse(rawPays);
-          if (Array.isArray(parsedPays) && parsedPays.length > 0) {
-            state.paymentMethods = parsedPays;
+        const savedPay = localStorage.getItem(STORAGE_KEYS.PAYMENTS);
+        if (savedPay) {
+          const parsedPay = JSON.parse(savedPay);
+          if (Array.isArray(parsedPay) && parsedPay.length > 0) {
+            appState.payments = parsedPay;
           }
         }
-        if (!state.paymentMethods.includes(FALLBACK_PAYMENT_METHOD)) {
-          state.paymentMethods.push(FALLBACK_PAYMENT_METHOD);
+        const savedRate = localStorage.getItem(STORAGE_KEYS.RATE);
+        if (savedRate && !isNaN(parseFloat(savedRate)) && parseFloat(savedRate) > 0) {
+          appState.exchangeRate = parseFloat(savedRate);
+          appState.rateSourceText = '已儲存匯率';
         }
-
-        const rawRate = localStorage.getItem(STORAGE_KEYS.EXCHANGE_RATE);
-        if (rawRate) {
-          const parsedRate = JSON.parse(rawRate);
-          if (parsedRate && typeof parsedRate.rate === 'number' && parsedRate.rate > 0) {
-            state.exchangeRate = parsedRate.rate;
-            // 移除任何舊存檔中殘留的 (open.er-api) 或括號 API 來源文字
-            const cleanSource = (parsedRate.source || '即時匯率').replace(/\s*\([^)]*api[^)]*\)/gi, '').trim() || '即時匯率';
-            state.rateSource = cleanSource;
-          }
+        const savedLeaves = localStorage.getItem(STORAGE_KEYS.LEAVES);
+        if (savedLeaves !== null) {
+          appState.leavesEnabled = savedLeaves === 'true';
         }
-
-        const rawLeaves = localStorage.getItem(STORAGE_KEYS.LEAVES_ENABLED);
-        if (rawLeaves !== null) {
-          state.leavesEnabled = rawLeaves === 'true';
-        }
-      } catch (err) {
-        console.warn('讀取本機儲存失敗：', err);
+      } catch (e) {
+        console.warn('讀取本機儲存資料時發生異常:', e);
       }
     }
 
     function saveExpensesToStorage() {
-      localStorage.setItem(STORAGE_KEYS.EXPENSES, JSON.stringify(state.expenses));
-      updateHeaderTotalBadge();
+      try {
+        localStorage.setItem(STORAGE_KEYS.EXPENSES, JSON.stringify(appState.expenses));
+      } catch (e) {
+        showToast('⚠️ 儲存失敗，請檢查瀏覽器儲存空間');
+      }
     }
 
     function saveCategoriesToStorage() {
-      if (!state.categories.includes(FALLBACK_CATEGORY)) {
-        state.categories.push(FALLBACK_CATEGORY);
-      }
-      localStorage.setItem(STORAGE_KEYS.CATEGORIES, JSON.stringify(state.categories));
-    }
-
-    function savePaymentMethodsToStorage() {
-      if (!state.paymentMethods.includes(FALLBACK_PAYMENT_METHOD)) {
-        state.paymentMethods.push(FALLBACK_PAYMENT_METHOD);
-      }
-      localStorage.setItem(STORAGE_KEYS.PAYMENT_METHODS, JSON.stringify(state.paymentMethods));
-    }
-
-    function saveExchangeRateToStorage(rate, source) {
-      state.exchangeRate = rate;
-      state.rateSource = source;
-      localStorage.setItem(STORAGE_KEYS.EXCHANGE_RATE, JSON.stringify({
-        rate,
-        source,
-        updatedAt: new Date().toISOString()
-      }));
-      updateRateUI();
-    }
-
-    // 抓取即時 JPY -> TWD 匯率（介面已清除 API 來源名稱）
-    async function fetchLiveExchangeRate(showNotify = false) {
-      const badge = document.getElementById('rateSourceBadge');
-      if (badge) badge.textContent = '更新匯率中...';
       try {
-        const res = await fetch('https://open.er-api.com/v6/latest/JPY');
-        if (!res.ok) throw new Error('Network error');
-        const data = await res.json();
-        const liveRate = data && data.rates && data.rates.TWD;
-        if (typeof liveRate === 'number' && liveRate > 0) {
-          saveExchangeRateToStorage(Number(liveRate.toFixed(4)), '即時匯率');
-          if (showNotify) showToast(`已更新最新匯率：1 JPY = ${liveRate.toFixed(4)} TWD`);
-          renderExpensesDashboard();
-          return;
-        }
-        throw new Error('Invalid rate data');
-      } catch (e) {
-        if (badge) badge.textContent = `${state.rateSource}（離線使用本機匯率）`;
-        if (showNotify) showToast('目前無法連線匯率伺服器，沿用目前匯率');
-      }
+        localStorage.setItem(STORAGE_KEYS.CATEGORIES, JSON.stringify(appState.categories));
+      } catch (e) {}
     }
 
-    function handleManualRateChange(val) {
-      const num = parseFloat(val);
-      if (!isNaN(num) && num > 0) {
-        saveExchangeRateToStorage(num, '手動自訂匯率');
-        renderExpensesDashboard();
-        if (state.activeActivityContext) {
-          renderActivityModalHistory();
-        }
-      }
+    function savePaymentsToStorage() {
+      try {
+        localStorage.setItem(STORAGE_KEYS.PAYMENTS, JSON.stringify(appState.payments));
+      } catch (e) {}
     }
 
-    function updateRateUI() {
-      const input = document.getElementById('manualRateInput');
-      const badge = document.getElementById('rateSourceBadge');
-      const rateDisplay = document.getElementById('summaryRateDisplay');
-      if (input && document.activeElement !== input) {
-        input.value = state.exchangeRate;
-      }
-      if (badge) {
-        badge.textContent = state.rateSource;
-      }
-      if (rateDisplay) {
-        rateDisplay.textContent = `1 JPY = ${Number(state.exchangeRate).toFixed(4)} TWD`;
-      }
-    }
-
-    // 格式化金額輔助函式
-    function formatJpy(amount) {
-      return '¥' + Math.round(Number(amount) || 0).toLocaleString('zh-TW');
-    }
-
-    function formatTwdFromJpy(jpyAmount) {
-      const twd = Math.round((Number(jpyAmount) || 0) * state.exchangeRate);
-      return 'NT$ ' + twd.toLocaleString('zh-TW');
-    }
-
-    function updateHeaderTotalBadge() {
-      const totalJpy = state.expenses.reduce((sum, item) => sum + Number(item.amount || 0), 0);
-      const badge = document.getElementById('headerTotalJpy');
-      if (badge) badge.textContent = formatJpy(totalJpy);
-    }
-
-    function getPaymentMethodIcon(method) {
-      if (!method) return '💵';
-      if (method.includes('現金')) return '💵';
-      if (method.includes('信用') || method.includes('JCB') || method.includes('VISA') || method.includes('Master')) return '💳';
-      if (method.includes('IC') || method.includes('Suica') || method.includes('ICOCA') || method.includes('交通')) return '🚃';
-      if (method.includes('行動') || method.includes('Pay') || method.includes('Apple') || method.includes('LINE')) return '📱';
-      return '👛';
+    function saveRateToStorage() {
+      try {
+        localStorage.setItem(STORAGE_KEYS.RATE, String(appState.exchangeRate));
+      } catch (e) {}
     }
 
     /* ==========================================================================
-       四、類別與付款方式自由管理（新增、重新命名連動、刪除防誤觸與安全歸類至「其他」）
+       三、工具函式：金額格式化、複製日文店名、Toast、客製確認框
        ========================================================================== */
-    function addCustomCategory(rawName) {
-      const name = (rawName || '').trim();
-      if (!name) {
-        showToast('請輸入類別名稱');
-        return null;
-      }
-      if (state.categories.includes(name)) {
-        showToast(`類別「${name}」已存在`);
-        return name;
-      }
-      const otherIdx = state.categories.indexOf(FALLBACK_CATEGORY);
-      if (otherIdx > -1) {
-        state.categories.splice(otherIdx, 0, name);
+    function formatJpy(amount) {
+      const num = Math.round(Number(amount) || 0);
+      return '¥' + num.toLocaleString('zh-TW');
+    }
+
+    function formatTwd(jpyAmount) {
+      const num = Math.round((Number(jpyAmount) || 0) * appState.exchangeRate);
+      return 'NT$ ' + num.toLocaleString('zh-TW');
+    }
+
+    function escapeHtml(str) {
+      if (str === null || str === undefined) return '';
+      return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+    }
+
+    let toastTimer = null;
+    function showToast(msg) {
+      const el = document.getElementById('toastNotification');
+      const textEl = document.getElementById('toastText');
+      textEl.textContent = msg;
+      el.classList.remove('opacity-0');
+      el.classList.add('opacity-100');
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => {
+        el.classList.remove('opacity-100');
+        el.classList.add('opacity-0');
+      }, 2400);
+    }
+
+    function copyJapaneseName(jpText) {
+      if (!jpText) return;
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(jpText).then(() => {
+          showToast(`📋 已複製日文名稱：「${jpText}」`);
+        }).catch(() => {
+          fallbackCopyText(jpText);
+        });
       } else {
-        state.categories.push(name);
+        fallbackCopyText(jpText);
       }
-      saveCategoriesToStorage();
-      return name;
     }
 
-    function renameCategory(oldName, rawNewName) {
-      const newName = (rawNewName || '').trim();
-      if (!newName || newName === oldName) return false;
-      if (oldName === FALLBACK_CATEGORY) {
-        showToast('「其他」為系統預設保底類別，不可重新命名');
-        return false;
+    function fallbackCopyText(text) {
+      const textarea = document.createElement('textarea');
+      textarea.value = text;
+      textarea.style.position = 'fixed';
+      textarea.style.opacity = '0';
+      document.body.appendChild(textarea);
+      textarea.select();
+      try {
+        document.execCommand('copy');
+        showToast(`📋 已複製日文名稱：「${text}」`);
+      } catch (e) {
+        showToast('⚠️ 複製失敗，請手動選取文字');
       }
-      if (state.categories.includes(newName)) {
-        showToast(`類別「${newName}」已存在，請使用其他名稱`);
-        return false;
-      }
-      const idx = state.categories.indexOf(oldName);
-      if (idx === -1) return false;
-
-      state.categories[idx] = newName;
-      saveCategoriesToStorage();
-
-      let updatedCount = 0;
-      state.expenses.forEach(exp => {
-        if (exp.category === oldName) {
-          exp.category = newName;
-          updatedCount++;
-        }
-      });
-      saveExpensesToStorage();
-
-      if (state.selectedExpenseCategoryFilter === oldName) {
-        state.selectedExpenseCategoryFilter = newName;
-      }
-
-      renderCategoryManager();
-      renderExpensesDashboard();
-      if (state.activeActivityContext) {
-        populateCategorySelect('actCategorySelect', newName);
-        renderActivityModalHistory();
-      }
-      showToast(`已將「${oldName}」更名為「${newName}」（同步更新 ${updatedCount} 筆帳目）`);
-      return true;
+      document.body.removeChild(textarea);
     }
 
-    function requestDeleteCategory(catName) {
-      if (catName === FALLBACK_CATEGORY) {
-        showToast('「其他」為系統預設保底類別，無法刪除');
-        return;
-      }
-      const affectedCount = state.expenses.filter(e => e.category === catName).length;
-      const msg = affectedCount > 0
-        ? `確定要刪除類別「${catName}」嗎？此類別下共有 ${affectedCount} 筆歷史帳目，刪除後這些帳目將會自動安全歸類至「${FALLBACK_CATEGORY}」，絕不會遺失。`
-        : `確定要刪除自訂類別「${catName}」嗎？`;
+    function openCustomConfirm(title, message, onConfirmCallback) {
+      const modal = document.getElementById('customConfirmModal');
+      document.getElementById('confirmModalTitle').textContent = title;
+      document.getElementById('confirmModalMessage').textContent = message;
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
 
-      showConfirmModal('刪除花費類別', msg, () => {
-        state.categories = state.categories.filter(c => c !== catName);
-        saveCategoriesToStorage();
+      const okBtn = document.getElementById('confirmOkBtn');
+      const cancelBtn = document.getElementById('confirmCancelBtn');
 
-        if (affectedCount > 0) {
-          state.expenses.forEach(exp => {
-            if (exp.category === catName) {
-              exp.category = FALLBACK_CATEGORY;
-            }
-          });
-          saveExpensesToStorage();
-        }
+      const cleanup = () => {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+        okBtn.onclick = null;
+        cancelBtn.onclick = null;
+      };
 
-        if (state.selectedExpenseCategoryFilter === catName) {
-          state.selectedExpenseCategoryFilter = 'ALL';
-        }
-
-        renderCategoryManager();
-        renderExpensesDashboard();
-        if (state.activeActivityContext) {
-          populateCategorySelect('actCategorySelect', FALLBACK_CATEGORY);
-          renderActivityModalHistory();
-        }
-        showToast(affectedCount > 0
-          ? `已刪除「${catName}」，${affectedCount} 筆帳目已歸類至「${FALLBACK_CATEGORY}」`
-          : `已刪除類別「${catName}」`
-        );
-      });
-    }
-
-    // --- 付款方式管理 ---
-    function addCustomPaymentMethod(rawName) {
-      const name = (rawName || '').trim();
-      if (!name) {
-        showToast('請輸入付款方式名稱');
-        return null;
-      }
-      if (state.paymentMethods.includes(name)) {
-        showToast(`付款方式「${name}」已存在`);
-        return name;
-      }
-      const otherIdx = state.paymentMethods.indexOf(FALLBACK_PAYMENT_METHOD);
-      if (otherIdx > -1) {
-        state.paymentMethods.splice(otherIdx, 0, name);
-      } else {
-        state.paymentMethods.push(name);
-      }
-      savePaymentMethodsToStorage();
-      return name;
-    }
-
-    function renamePaymentMethod(oldName, rawNewName) {
-      const newName = (rawNewName || '').trim();
-      if (!newName || newName === oldName) return false;
-      if (oldName === FALLBACK_PAYMENT_METHOD) {
-        showToast('「其他」為系統預設保底付款方式，不可重新命名');
-        return false;
-      }
-      if (state.paymentMethods.includes(newName)) {
-        showToast(`付款方式「${newName}」已存在，請使用其他名稱`);
-        return false;
-      }
-      const idx = state.paymentMethods.indexOf(oldName);
-      if (idx === -1) return false;
-
-      state.paymentMethods[idx] = newName;
-      savePaymentMethodsToStorage();
-
-      let updatedCount = 0;
-      state.expenses.forEach(exp => {
-        if ((exp.paymentMethod || '現金') === oldName) {
-          exp.paymentMethod = newName;
-          updatedCount++;
-        }
-      });
-      saveExpensesToStorage();
-
-      if (state.selectedExpensePaymentFilter === oldName) {
-        state.selectedExpensePaymentFilter = newName;
-      }
-
-      renderPaymentManager();
-      renderExpensesDashboard();
-      if (state.activeActivityContext) {
-        populatePaymentSelect('actPaymentSelect', newName);
-        renderActivityModalHistory();
-      }
-      showToast(`已將「${oldName}」更名為「${newName}」（同步更新 ${updatedCount} 筆帳目）`);
-      return true;
-    }
-
-    function requestDeletePaymentMethod(payName) {
-      if (payName === FALLBACK_PAYMENT_METHOD) {
-        showToast('「其他」為系統預設保底付款方式，無法刪除');
-        return;
-      }
-      const affectedCount = state.expenses.filter(e => (e.paymentMethod || '現金') === payName).length;
-      const msg = affectedCount > 0
-        ? `確定要刪除付款方式「${payName}」嗎？此方式下共有 ${affectedCount} 筆歷史帳目，刪除後這些帳目將會自動歸類至「${FALLBACK_PAYMENT_METHOD}」，絕不會遺失。`
-        : `確定要刪除付款方式「${payName}」嗎？`;
-
-      showConfirmModal('刪除付款方式', msg, () => {
-        state.paymentMethods = state.paymentMethods.filter(p => p !== payName);
-        savePaymentMethodsToStorage();
-
-        if (affectedCount > 0) {
-          state.expenses.forEach(exp => {
-            if ((exp.paymentMethod || '現金') === payName) {
-              exp.paymentMethod = FALLBACK_PAYMENT_METHOD;
-            }
-          });
-          saveExpensesToStorage();
-        }
-
-        if (state.selectedExpensePaymentFilter === payName) {
-          state.selectedExpensePaymentFilter = 'ALL';
-        }
-
-        renderPaymentManager();
-        renderExpensesDashboard();
-        if (state.activeActivityContext) {
-          populatePaymentSelect('actPaymentSelect', FALLBACK_PAYMENT_METHOD);
-          renderActivityModalHistory();
-        }
-        showToast(affectedCount > 0
-          ? `已刪除「${payName}」，${affectedCount} 筆帳目已歸類至「${FALLBACK_PAYMENT_METHOD}」`
-          : `已刪除付款方式「${payName}」`
-        );
-      });
+      cancelBtn.onclick = cleanup;
+      okBtn.onclick = () => {
+        cleanup();
+        if (typeof onConfirmCallback === 'function') onConfirmCallback();
+      };
     }
 
     /* ==========================================================================
-       五、主分頁切換與每日行程渲染（含 JMA 預報按鈕 & 精準卡片按鈕列）
+       四、飄落楓葉動畫控制
+       ========================================================================== */
+    function initMapleLeaves() {
+      const layer = document.getElementById('mapleLeafLayer');
+      layer.innerHTML = '';
+      if (!appState.leavesEnabled) {
+        document.getElementById('leafStatusText').textContent = '飄葉關';
+        return;
+      }
+      document.getElementById('leafStatusText').textContent = '飄葉開';
+
+      const leafColors = ['#C84B31', '#D99B26', '#B83B24', '#E07A38', '#9E321D'];
+      const leafCount = 9;
+
+      for (let i = 0; i < leafCount; i++) {
+        const leaf = document.createElement('div');
+        leaf.className = 'falling-leaf';
+        const leftPct = Math.round((i * 100) / leafCount + Math.random() * 6);
+        const durationSec = (14 + Math.random() * 10).toFixed(1);
+        const delaySec = (-Math.random() * 16).toFixed(1);
+        const sizePx = Math.round(14 + Math.random() * 10);
+        const color = leafColors[i % leafColors.length];
+
+        leaf.style.left = `${leftPct}%`;
+        leaf.style.animationDuration = `${durationSec}s`;
+        leaf.style.animationDelay = `${delaySec}s`;
+        leaf.innerHTML = `
+          <svg width="${sizePx}" height="${sizePx}" viewBox="0 0 24 24" fill="${color}">
+            <path d="M12 2L14.2 7.5L19.5 6L17 11.2L22 13.5L16.5 16L17.5 20.5L12.8 18V22H11.2V18L6.5 20.5L7.5 16L2 13.5L7 11.2L4.5 6L9.8 7.5L12 2Z"/>
+          </svg>
+        `;
+        layer.appendChild(leaf);
+      }
+    }
+
+    function toggleLeaves() {
+      appState.leavesEnabled = !appState.leavesEnabled;
+      localStorage.setItem(STORAGE_KEYS.LEAVES, String(appState.leavesEnabled));
+      initMapleLeaves();
+      showToast(appState.leavesEnabled ? '🍁 已開啟秋楓飄落動畫' : '🍂 已關閉秋楓飄落動畫');
+    }
+
+    /* ==========================================================================
+       五、四大主分頁切換控制
        ========================================================================== */
     function switchTab(tabName) {
-      state.activeTab = tabName;
-      const sections = ['itinerary', 'weather', 'taxfree', 'expenses'];
-      sections.forEach(sec => {
-        const el = document.getElementById(`tab-${sec}`);
-        if (el) el.classList.toggle('hidden', sec !== tabName);
+      appState.activeTab = tabName;
+      const tabs = ['itinerary', 'weather', 'taxfree', 'expenses'];
+      tabs.forEach(t => {
+        const sec = document.getElementById(`tab-${t}`);
+        if (t === tabName) {
+          sec.classList.remove('hidden');
+        } else {
+          sec.classList.add('hidden');
+        }
       });
 
       document.querySelectorAll('.nav-tab-btn').forEach(btn => {
@@ -4588,541 +4198,406 @@
       });
 
       if (tabName === 'expenses') {
-        renderExpensesDashboard();
+        renderExpensesTab();
       }
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
-    function renderDaySelector() {
+    /* ==========================================================================
+       六、即時天氣 API (Open-Meteo 免金鑰串接) 與即時匯率 API
+       ========================================================================== */
+    const weatherCache = {};
+
+    function getWeatherEmoji(code) {
+      if (code === 0) return '☀️ 晴朗';
+      if (code >= 1 && code <= 3) return '⛅ 多雲時晴';
+      if (code >= 45 && code <= 48) return '🌫️ 晨霧／有霧';
+      if (code >= 51 && code <= 67) return '🌧️ 小雨／陣雨';
+      if (code >= 71 && code <= 77) return '❄️ 降雪';
+      if (code >= 80 && code <= 82) return '🌦️ 陣雨';
+      if (code >= 95) return '⛈️ 雷陣雨';
+      return '🌤️ 涼爽晴時多雲';
+    }
+
+    async function loadLiveWeatherForDay(dayObj) {
+      const container = document.getElementById(`liveWeatherBox-day-${dayObj.day}`);
+      if (!container) return;
+
+      const cacheKey = `${dayObj.lat}_${dayObj.lon}`;
+      if (weatherCache[cacheKey]) {
+        renderWeatherBoxContent(container, dayObj, weatherCache[cacheKey]);
+        return;
+      }
+
+      try {
+        const url = `https://api.open-meteo.com/v1/forecast?latitude=${dayObj.lat}&longitude=${dayObj.lon}&current=temperature_2m,weather_code,wind_speed_10m&daily=temperature_2m_max,temperature_2m_min&timezone=Asia%2FTokyo&forecast_days=1`;
+        const res = await fetch(url);
+        if (!res.ok) throw new Error('Weather API failed');
+        const data = await res.json();
+        weatherCache[cacheKey] = data;
+        renderWeatherBoxContent(container, dayObj, data);
+      } catch (err) {
+        container.innerHTML = `
+          <div class="text-xs text-inkMuted">
+            📡 目前為離線模式，顯示 12 月上旬歷史氣候預測：<strong>${escapeHtml(dayObj.climateGuide.tempRange)}</strong>
+          </div>
+        `;
+      }
+    }
+
+    function renderWeatherBoxContent(container, dayObj, data) {
+      if (!container || !data || !data.current) return;
+      const temp = Math.round(data.current.temperature_2m);
+      const wind = Math.round(data.current.wind_speed_10m);
+      const desc = getWeatherEmoji(data.current.weather_code);
+      const maxT = data.daily && data.daily.temperature_2m_max ? Math.round(data.daily.temperature_2m_max[0]) : '--';
+      const minT = data.daily && data.daily.temperature_2m_min ? Math.round(data.daily.temperature_2m_min[0]) : '--';
+
+      container.innerHTML = `
+        <div class="flex flex-wrap items-center justify-between gap-2 text-xs">
+          <div class="flex items-center gap-2">
+            <span class="px-2 py-0.5 rounded-lg bg-moss text-white font-bold">即時當地氣象</span>
+            <span class="font-bold text-ink">${escapeHtml(dayObj.weatherCity)}：${desc} ${temp}°C</span>
+          </div>
+          <div class="text-inkMuted">
+            今日高低溫 ${minT}°C ~ ${maxT}°C ｜ 風速 ${wind} km/h
+          </div>
+        </div>
+      `;
+    }
+
+    async function fetchLiveExchangeRate(showNotify = false) {
+      try {
+        const res = await fetch('https://open.er-api.com/v6/latest/JPY');
+        if (!res.ok) throw new Error('Rate API error');
+        const data = await res.json();
+        if (data && data.rates && data.rates.TWD) {
+          appState.exchangeRate = Number(data.rates.TWD.toFixed(4));
+          appState.rateSourceText = '即時匯率';
+          saveRateToStorage();
+          updateRateUI();
+          if (showNotify) {
+            showToast(`💱 已更新即時匯率：1 JPY = ${appState.exchangeRate} TWD`);
+          }
+          return;
+        }
+        throw new Error('Invalid rate payload');
+      } catch (e) {
+        appState.rateSourceText = '離線／自訂匯率';
+        updateRateUI();
+        if (showNotify) {
+          showToast('⚠️ 無法連線匯率伺服器，維持目前設定匯率');
+        }
+      }
+    }
+
+    function handleManualRateChange(val) {
+      const num = parseFloat(val);
+      if (!isNaN(num) && num > 0) {
+        appState.exchangeRate = num;
+        appState.rateSourceText = '手動自訂匯率';
+        saveRateToStorage();
+        updateRateUI();
+        if (appState.activeTab === 'expenses') {
+          renderExpensesTab();
+        }
+        if (appState.activeTab === 'itinerary') {
+          renderDayContent(appState.selectedDay);
+        }
+      }
+    }
+
+    function updateRateUI() {
+      const badge = document.getElementById('rateSourceBadge');
+      const input = document.getElementById('manualRateInput');
+      const display = document.getElementById('summaryRateDisplay');
+      if (badge) badge.textContent = appState.rateSourceText;
+      if (input && document.activeElement !== input) {
+        input.value = appState.exchangeRate;
+      }
+      if (display) {
+        display.textContent = `1 JPY = ${appState.exchangeRate} TWD`;
+      }
+    }
+
+    /* ==========================================================================
+       七、每日行程渲染引擎（含單筆行程專屬小標籤彈窗：注意事項／周邊小吃／必買伴手禮）
+       ========================================================================== */
+    function renderDaySelectorBar() {
       const bar = document.getElementById('daySelectorBar');
-      if (!bar) return;
       bar.innerHTML = itineraryData.map(d => {
-        const isSelected = d.day === state.selectedDay;
-        const btnClass = isSelected
+        const isSelected = d.day === appState.selectedDay;
+        const dayTotal = getDayTotalJpy(d.day);
+        const activeClass = isSelected
           ? 'bg-maple text-white border-maple shadow-sm'
           : 'bg-parchment text-ink border-woodBorder hover:bg-ginkgoLight/40';
+
         return `
           <button
             type="button"
             onclick="selectDay(${d.day})"
-            class="shrink-0 px-3 py-2 rounded-2xl border text-left transition active:scale-95 ${btnClass}"
+            class="shrink-0 px-3 py-2 rounded-2xl border text-left transition active:scale-95 min-w-[96px] ${activeClass}"
           >
-            <div class="flex items-center gap-1.5">
+            <div class="flex items-center justify-between gap-1">
               <span class="text-xs font-extrabold">Day ${d.day}</span>
-              <span class="text-[10px] opacity-85">${d.date.slice(5)} (${d.weekday})</span>
+              <span class="text-[10px] opacity-85">${d.date.slice(5)}</span>
             </div>
-            <div class="text-[11px] font-medium truncate max-w-[118px] mt-0.5 opacity-95">
+            <div class="text-[11px] font-medium truncate max-w-[115px] mt-0.5">
               ${escapeHtml(d.shortTitle)}
             </div>
+            ${dayTotal > 0 ? `<div class="text-[10px] mt-0.5 font-mono ${isSelected ? 'text-amber-100' : 'text-maple font-bold'}">${formatJpy(dayTotal)}</div>` : ''}
           </button>
         `;
       }).join('');
+
+      const currentObj = itineraryData.find(d => d.day === appState.selectedDay);
+      const badge = document.getElementById('dayProgressBadge');
+      if (currentObj && badge) {
+        badge.textContent = `Day ${currentObj.day}（${currentObj.date} ${currentObj.weekday}）`;
+      }
     }
 
     function selectDay(dayNum) {
-      state.selectedDay = dayNum;
-      renderDaySelector();
+      appState.selectedDay = dayNum;
+      renderDaySelectorBar();
       renderDayContent(dayNum);
     }
 
-    function renderDayContent(dayNum) {
-      const dayObj = itineraryData.find(d => d.day === dayNum);
-      if (!dayObj) return;
-
-      const badge = document.getElementById('dayProgressBadge');
-      if (badge) {
-        badge.textContent = `Day ${dayObj.day}（${dayObj.date} ${dayObj.weekday}）完整詳盡版`;
-      }
-
-      const container = document.getElementById('dayContentContainer');
-      const isSelfDrive = dayObj.transportMode === 'self-drive';
-      const jmaInfo = JMA_FORECAST_LINKS[dayObj.day] || {
-        region: "日本氣象廳預報",
-        url: "https://www.jma.go.jp/bosai/forecast/"
-      };
-
-      // 1. 高山黑冰預警橫幅（Day 3 - Day 5）
-      const blackIceBannerHtml = dayObj.hasBlackIceWarning ? `
-        <div class="storybook-card p-3.5 sm:p-4 bg-amber-50/95 border-2 border-amber-400 flex items-start gap-3">
-          <span class="text-xl sm:text-2xl shrink-0">❄️⚠️</span>
-          <div class="text-xs sm:text-sm text-amber-950 space-y-1">
-            <p class="font-bold text-maple">高山結冰與黑冰（Black Ice）自駕特別預警（Day 3 – Day 5）</p>
-            <p class="leading-relaxed">
-              本日行程行經高海拔山區，夜間與清晨低溫易跌破 0°C，背陰處與橋面路面結冰機率高。<strong>請務必確認租車已配備雪胎（Studless Snow Tires），山路過彎減速慢行、保持 2 倍安全車距並嚴禁急踩煞車。</strong>
-            </p>
-          </div>
-        </div>
-      ` : '';
-
-      // 2. 交通指引卡（自駕專區 vs 全程大眾運輸專區）
-      let transportBlockHtml = '';
-      if (isSelfDrive && dayObj.drivingGuide) {
-        const parkingsHtml = (dayObj.drivingGuide.parkings || []).map(p => `
-          <div class="p-2.5 rounded-xl bg-white/90 border border-woodBorder text-xs flex flex-col sm:flex-row sm:items-center justify-between gap-1">
-            <span class="font-bold text-ink">🅿️ ${escapeHtml(p.place)}</span>
-            <span class="text-moss font-medium">${escapeHtml(p.note)}</span>
-          </div>
-        `).join('');
-
-        transportBlockHtml = `
-          <div class="storybook-card p-4 sm:p-5 bg-mossLight/45 border-moss/30 space-y-3">
-            <div class="flex flex-wrap items-center justify-between gap-2">
-              <h3 class="text-sm sm:text-base font-bold text-moss flex items-center gap-1.5">
-                <span>🚗</span> 本日自駕路線與專屬停車場指引
-              </h3>
-              <a
-                href="${dayObj.googleMapsRouteUrl}"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="px-3 py-1.5 rounded-xl bg-moss text-white text-xs font-bold hover:opacity-95 active:scale-95 transition inline-flex items-center gap-1 shadow-sm"
-              >
-                <span>🗺️</span> 開啟 Google Maps 即時路況導航 ↗
-              </a>
-            </div>
-            <p class="text-xs sm:text-sm text-ink bg-white/80 p-3 rounded-xl border border-woodBorder leading-relaxed">
-              <strong class="text-moss">建議路線：</strong>${escapeHtml(dayObj.drivingGuide.routeText)}
-            </p>
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
-              ${parkingsHtml}
-            </div>
-          </div>
-        `;
-      } else if (dayObj.transitTicketGuide) {
-        transportBlockHtml = `
-          <div class="storybook-card p-4 sm:p-5 bg-ginkgoLight/35 border-ginkgo/40 space-y-2.5">
-            <h3 class="text-sm sm:text-base font-bold text-amber-950 flex items-center gap-1.5">
-              <span>🚃</span> 本日全程大眾運輸與票券動線指引
-            </h3>
-            <p class="text-xs sm:text-sm text-ink bg-white/85 p-3 rounded-xl border border-woodBorder leading-relaxed">
-              <strong class="text-maple">使用票券：</strong>${escapeHtml(dayObj.transitTicketGuide.tickets)}
-            </p>
-            <p class="text-xs sm:text-sm text-ink bg-white/85 p-3 rounded-xl border border-woodBorder leading-relaxed">
-              <strong class="text-moss">乘車動線：</strong>${escapeHtml(dayObj.transitTicketGuide.route)}
-            </p>
-          </div>
-        `;
-      }
-
-      // 3. 時間軸行程卡片（整合「＋記一筆」＋精準條件顯示「⚠️ 注意事項」「🍡 周邊小吃」「🎁 必買伴手禮」）
-      const timelineHtml = dayObj.timeline.map((item, idx) => {
-        const actExpenses = state.expenses.filter(e => e.activityId === item.id);
-        const count = actExpenses.length;
-        const subtotalJpy = actExpenses.reduce((sum, e) => sum + Number(e.amount || 0), 0);
-
-        const ctxData = getActivityContextData(dayObj, item);
-        const hasNotes = ctxData.notes.length > 0;
-        const hasSnacks = ctxData.snacks.length > 0;
-        const hasSouvenirs = ctxData.souvenirs.length > 0;
-
-        const copyBtnHtml = item.jpCopyName ? `
-          <button
-            type="button"
-            onclick="copyJapaneseName('${escapeAttr(item.jpCopyName)}')"
-            class="px-2.5 py-1 rounded-lg bg-parchment hover:bg-ginkgoLight/60 border border-woodBorder text-[11px] font-semibold text-ink transition active:scale-95 inline-flex items-center gap-1"
-            title="複製日文店名／景點名供導航或查詢"
-          >
-            <span>📋</span>
-            <span class="truncate max-w-[160px] sm:max-w-[230px]">${escapeHtml(item.jpCopyName)}</span>
-          </button>
-        ` : '';
-
-        const copyAltBtnHtml = item.jpCopyNameAlt ? `
-          <button
-            type="button"
-            onclick="copyJapaneseName('${escapeAttr(item.jpCopyNameAlt)}')"
-            class="px-2.5 py-1 rounded-lg bg-parchment hover:bg-ginkgoLight/60 border border-woodBorder text-[11px] font-semibold text-ink transition active:scale-95 inline-flex items-center gap-1"
-            title="複製第二個日文景點名"
-          >
-            <span>📋</span>
-            <span class="truncate max-w-[140px]">${escapeHtml(item.jpCopyNameAlt)}</span>
-          </button>
-        ` : '';
-
-        const expenseSummaryPill = count > 0
-          ? `<button
-              type="button"
-              onclick="openActivityExpenseModal(${dayObj.day}, '${item.id}')"
-              class="text-xs font-bold text-maple bg-maple/10 hover:bg-maple/15 px-2.5 py-1 rounded-full transition"
-            >
-              🧾 ${count} 筆 · ${formatJpy(subtotalJpy)}
-            </button>`
-          : '';
-
-        const notesBtnHtml = hasNotes ? `
-          <button
-            type="button"
-            onclick="openActivityInfoModal(${dayObj.day}, '${item.id}', 'notes')"
-            class="px-2.5 py-1.5 rounded-xl bg-amber-50 hover:bg-amber-100 border border-amber-300 text-amber-950 text-xs font-bold active:scale-95 transition inline-flex items-center gap-1"
-          >
-            <span>⚠️</span>
-            <span>注意事項</span>
-            <span class="px-1.5 py-0.2 rounded-full bg-amber-200/80 text-[10px]">${ctxData.notes.length}</span>
-          </button>
-        ` : '';
-
-        const snacksBtnHtml = hasSnacks ? `
-          <button
-            type="button"
-            onclick="openActivityInfoModal(${dayObj.day}, '${item.id}', 'snacks')"
-            class="px-2.5 py-1.5 rounded-xl bg-ginkgoLight/55 hover:bg-ginkgoLight border border-ginkgo/45 text-amber-950 text-xs font-bold active:scale-95 transition inline-flex items-center gap-1"
-          >
-            <span>🍡</span>
-            <span>周邊小吃</span>
-            <span class="px-1.5 py-0.2 rounded-full bg-ginkgo/25 text-[10px]">${ctxData.snacks.length}</span>
-          </button>
-        ` : '';
-
-        const souvenirsBtnHtml = hasSouvenirs ? `
-          <button
-            type="button"
-            onclick="openActivityInfoModal(${dayObj.day}, '${item.id}', 'souvenirs')"
-            class="px-2.5 py-1.5 rounded-xl bg-mossLight hover:bg-moss/15 border border-moss/35 text-moss text-xs font-bold active:scale-95 transition inline-flex items-center gap-1"
-          >
-            <span>🎁</span>
-            <span>必買伴手禮</span>
-            <span class="px-1.5 py-0.2 rounded-full bg-moss/15 text-[10px]">${ctxData.souvenirs.length}</span>
-          </button>
-        ` : '';
-
-        return `
-          <div class="relative pl-6 sm:pl-7 pb-4 last:pb-0">
-            <!-- 時間軸垂直線與楓葉節點 -->
-            ${idx !== dayObj.timeline.length - 1 ? '<div class="absolute left-[9px] top-6 bottom-0 w-[2px] bg-woodBorder"></div>' : ''}
-            <div class="absolute left-0 top-1.5 w-5 h-5 rounded-full bg-woodcard border-2 border-maple flex items-center justify-center shadow-xs">
-              <div class="w-2 h-2 rounded-full bg-maple"></div>
-            </div>
-
-            <div class="storybook-card storybook-card-hover p-3.5 sm:p-4 space-y-2.5">
-              <!-- 時間與分類膠囊 -->
-              <div class="flex flex-wrap items-center justify-between gap-1.5">
-                <div class="flex items-center gap-2">
-                  <span class="font-mono text-xs sm:text-sm font-bold text-maple bg-maple/10 px-2.5 py-0.5 rounded-lg">
-                    ${escapeHtml(item.time)}
-                  </span>
-                  <span class="text-[11px] font-bold px-2 py-0.5 rounded-md bg-moss/12 text-moss">
-                    ${escapeHtml(item.categoryTag)}
-                  </span>
-                </div>
-                <div class="flex flex-wrap items-center gap-1">
-                  ${copyBtnHtml}
-                  ${copyAltBtnHtml}
-                </div>
-              </div>
-
-              <!-- 活動標題與詳細說明 -->
-              <div>
-                <h4 class="text-sm sm:text-base font-bold text-ink leading-snug">
-                  ${escapeHtml(item.title)}
-                </h4>
-                <p class="text-xs sm:text-sm text-inkMuted mt-1 leading-relaxed">
-                  ${escapeHtml(item.description)}
-                </p>
-              </div>
-
-              <!-- 底部整齊換行膠囊操作列：＋記一筆 ＋ 該行程精準注意事項／周邊小吃／必買伴手禮 -->
-              <div class="pt-2 border-t border-woodBorder/80 flex flex-wrap items-center justify-between gap-2">
-                <div class="flex flex-wrap items-center gap-1.5">
-                  <button
-                    type="button"
-                    onclick="openActivityExpenseModal(${dayObj.day}, '${item.id}')"
-                    class="px-3 py-1.5 rounded-xl bg-maple text-white hover:bg-mapleDark text-xs font-bold active:scale-95 transition shadow-xs inline-flex items-center gap-1"
-                  >
-                    <span>＋</span>
-                    <span>記一筆</span>
-                  </button>
-                  ${notesBtnHtml}
-                  ${snacksBtnHtml}
-                  ${souvenirsBtnHtml}
-                </div>
-                ${expenseSummaryPill}
-              </div>
-            </div>
-          </div>
-        `;
-      }).join('');
-
-      // 4. 街區散策小吃與輕食推薦（支援單一陣列或 Day 8 五大商圈分組）
-      let snacksSectionHtml = '';
-      if (Array.isArray(dayObj.snackGroups) && dayObj.snackGroups.length > 0) {
-        const groupsHtml = dayObj.snackGroups.map(grp => `
-          <div class="space-y-2">
-            <h4 class="text-xs sm:text-sm font-bold text-maple bg-maple/10 px-3 py-1.5 rounded-xl inline-block">
-              ${escapeHtml(grp.groupTitle)}
-            </h4>
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-              ${grp.items.map(s => renderSnackCardHtml(s)).join('')}
-            </div>
-          </div>
-        `).join('');
-
-        snacksSectionHtml = `
-          <div class="storybook-card p-4 sm:p-5 space-y-4">
-            <h3 class="text-base sm:text-lg font-bold text-ink flex items-center gap-2">
-              <span>🍡</span> 街區散策小吃與輕食推薦（五大商圈全收錄）
-            </h3>
-            ${groupsHtml}
-          </div>
-        `;
-      } else if (Array.isArray(dayObj.streetSnacks) && dayObj.streetSnacks.length > 0) {
-        snacksSectionHtml = `
-          <div class="storybook-card p-4 sm:p-5 space-y-3">
-            <h3 class="text-base sm:text-lg font-bold text-ink flex items-center gap-2">
-              <span>🍡</span> 街區散策小吃與輕食推薦
-            </h3>
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-              ${dayObj.streetSnacks.map(s => renderSnackCardHtml(s)).join('')}
-            </div>
-          </div>
-        `;
-      }
-
-      // 5. 當地必買伴手禮與指定實體店家
-      const souvenirsHtml = (dayObj.souvenirs && dayObj.souvenirs.length > 0) ? `
-        <div class="storybook-card p-4 sm:p-5 space-y-3">
-          <h3 class="text-base sm:text-lg font-bold text-moss flex items-center gap-2">
-            <span>🎁</span> 當地必買伴手禮與指定實體店家
-          </h3>
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-            ${dayObj.souvenirs.map(sv => `
-              <div class="p-3 rounded-2xl bg-parchment/90 border border-woodBorder flex items-start justify-between gap-2">
-                <div class="min-w-0">
-                  <p class="text-xs sm:text-sm font-bold text-ink">🛍️ ${escapeHtml(sv.item)}</p>
-                  <p class="text-xs text-inkMuted mt-0.5">🏪 ${escapeHtml(sv.shop)}</p>
-                </div>
-                <button
-                  type="button"
-                  onclick="copyJapaneseName('${escapeAttr(sv.shop.split('（')[0].trim())}')"
-                  class="shrink-0 px-2 py-1 rounded-lg bg-white border border-woodBorder text-[11px] font-semibold text-ink hover:bg-ginkgoLight/50 active:scale-95 transition"
-                  title="複製日文店名"
-                >
-                  📋 複製
-                </button>
-              </div>
-            `).join('')}
-          </div>
-        </div>
-      ` : '';
-
-      // 6. 營運與票務注意事項（保留每日行程頁面最下方完整區塊）
-      const notesHtml = (dayObj.operationalNotes && dayObj.operationalNotes.length > 0) ? `
-        <div class="storybook-card p-4 sm:p-5 bg-red-50/60 border-maple/35 space-y-3">
-          <h3 class="text-base sm:text-lg font-bold text-maple flex items-center gap-2">
-            <span>⚠️</span> 營運與票務注意事項
-          </h3>
-          <div class="space-y-2.5">
-            ${dayObj.operationalNotes.map(n => `
-              <div class="p-3 rounded-2xl bg-white/95 border border-maple/20 text-xs sm:text-sm space-y-1">
-                <p class="font-bold text-maple">📌 ${escapeHtml(n.target)}</p>
-                <p class="text-ink leading-relaxed">${escapeHtml(n.note)}</p>
-              </div>
-            `).join('')}
-          </div>
-        </div>
-      ` : '';
-
-      // 組合當日完整視圖（天氣區塊已刪除 Open-Meteo 標籤並加入日本氣象廳官方預報連結）
-      container.innerHTML = `
-        <!-- 當日主標題與即時天氣／穿搭卡 -->
-        <div class="storybook-card p-4 sm:p-6 bg-gradient-to-br from-woodcard via-woodcard to-ginkgoLight/30 space-y-4">
-          <div class="flex flex-wrap items-start justify-between gap-2">
-            <div class="space-y-1">
-              <div class="flex flex-wrap items-center gap-2">
-                <span class="px-3 py-1 rounded-xl bg-maple text-white text-xs sm:text-sm font-bold shadow-xs">
-                  Day ${dayObj.day} · ${dayObj.date}（${dayObj.weekday}）
-                </span>
-                <span class="px-2.5 py-1 rounded-xl ${isSelfDrive ? 'bg-moss text-white' : 'bg-ginkgo text-white'} text-xs font-bold">
-                  ${isSelfDrive ? '🚗 自駕移動' : '🚃 全程大眾運輸'}
-                </span>
-              </div>
-              <h2 class="text-base sm:text-xl font-bold text-ink pt-1 leading-snug">
-                ${escapeHtml(dayObj.title)}
-              </h2>
-            </div>
-          </div>
-
-          <!-- 交通、住宿、亮點三欄摘要 -->
-          <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5 text-xs">
-            <div class="p-3 rounded-2xl bg-parchment/90 border border-woodBorder">
-              <p class="font-bold text-moss mb-0.5">🧭 交通方式</p>
-              <p class="text-ink leading-relaxed">${escapeHtml(dayObj.transportSummary)}</p>
-            </div>
-            <div class="p-3 rounded-2xl bg-parchment/90 border border-woodBorder">
-              <p class="font-bold text-maple mb-0.5">🏨 當晚住宿</p>
-              <p class="text-ink leading-relaxed">${escapeHtml(dayObj.accommodation)}</p>
-            </div>
-            <div class="p-3 rounded-2xl bg-parchment/90 border border-woodBorder">
-              <p class="font-bold text-amber-800 mb-0.5">🍁 紅葉／行程亮點</p>
-              <p class="text-ink leading-relaxed">${escapeHtml(dayObj.highlights)}</p>
-            </div>
-          </div>
-
-          <!-- 即時當地氣溫天氣 & 日本氣象廳官方預報連結 & 12 月氣候穿搭建議 -->
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-3 pt-1">
-            <div id="liveWeatherWidget" class="p-3.5 rounded-2xl bg-white/90 border border-woodBorder flex flex-col justify-between gap-2.5">
-              <div class="flex items-center justify-between gap-2">
-                <div>
-                  <p class="text-xs font-bold text-moss">🌤️ ${escapeHtml(dayObj.weatherCity)} 即時天氣</p>
-                  <p class="text-xs text-inkMuted mt-0.5">正在連線取得即時氣溫...</p>
-                </div>
-                <span class="text-2xl">🍂</span>
-              </div>
-              <div class="pt-1 border-t border-woodBorder/70 flex items-center justify-between gap-2">
-                <span class="text-[11px] text-inkMuted">${escapeHtml(jmaInfo.region)}</span>
-                <a
-                  href="${jmaInfo.url}"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="px-2.5 py-1 rounded-lg bg-moss/12 hover:bg-moss text-moss hover:text-white border border-moss/25 text-xs font-bold transition active:scale-95 inline-flex items-center gap-1"
-                >
-                  <span>🇯🇵 日本氣象廳預報 ↗</span>
-                </a>
-              </div>
-            </div>
-
-            <div class="p-3.5 rounded-2xl bg-ginkgoLight/35 border border-ginkgo/35 space-y-1 text-xs">
-              <p class="font-bold text-amber-950 flex items-center justify-between">
-                <span>🧣 12 月氣候與穿搭建議</span>
-                <span class="font-mono text-[11px] text-maple">${escapeHtml(dayObj.climateGuide.tempRange)}</span>
-              </p>
-              <p class="text-ink leading-relaxed">${escapeHtml(dayObj.climateGuide.clothingTip)}</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- 高山黑冰警告（如有） -->
-        ${blackIceBannerHtml}
-
-        <!-- 自駕／大眾運輸指引 -->
-        ${transportBlockHtml}
-
-        <!-- 時間軸行程卡片列表 -->
-        <div class="space-y-1 pt-1">
-          <div class="flex items-center justify-between px-1 mb-2">
-            <h3 class="text-base sm:text-lg font-bold text-ink flex items-center gap-1.5">
-              <span>🕰️</span> 詳細時間軸與隨手記帳
-            </h3>
-            <span class="text-xs text-inkMuted">共 ${dayObj.timeline.length} 個時段</span>
-          </div>
-          ${timelineHtml}
-        </div>
-
-        <!-- 街區散策小吃與輕食推薦（保留頁面下方完整區塊） -->
-        ${snacksSectionHtml}
-
-        <!-- 當地必買伴手禮與指定實體店家（保留頁面下方完整區塊） -->
-        ${souvenirsHtml}
-
-        <!-- 營運與票務注意事項（保留頁面下方完整區塊） -->
-        ${notesHtml}
-      `;
-
-      // 非同步載入當日地點即時天氣
-      fetchDayWeather(dayObj);
+    function getActivityExpenses(activityId) {
+      return appState.expenses.filter(item => item.activityId === activityId);
     }
 
-    function renderSnackCardHtml(snack) {
-      return `
-        <div class="p-3 rounded-2xl bg-parchment/90 border border-woodBorder flex flex-col justify-between gap-2">
-          <div>
-            <div class="flex items-start justify-between gap-2">
-              <p class="text-xs sm:text-sm font-bold text-ink">${escapeHtml(snack.name)}</p>
-              <button
-                type="button"
-                onclick="copyJapaneseName('${escapeAttr(snack.name)}')"
-                class="shrink-0 px-2 py-1 rounded-lg bg-white border border-woodBorder text-[11px] font-semibold text-ink hover:bg-ginkgoLight/60 active:scale-95 transition"
-                title="一鍵複製日文店名"
-              >
-                📋 複製日文店名
-              </button>
-            </div>
-            <p class="text-[11px] text-moss font-medium mt-1">📍 ${escapeHtml(snack.location)}</p>
-            <p class="text-xs text-inkMuted mt-1 leading-relaxed">${escapeHtml(snack.feature)}</p>
-          </div>
-        </div>
-      `;
+    function getDayTotalJpy(dayNum) {
+      return appState.expenses
+        .filter(item => Number(item.day) === Number(dayNum))
+        .reduce((sum, item) => sum + (Number(item.amountJpy) || 0), 0);
     }
 
     /* ==========================================================================
-       六、單一行程「⚠️ 注意事項 / 🍡 周邊小吃 / 🎁 必買伴手禮」精準檢視彈窗
+       七之二、精準篩選單一行程專屬「⚠️ 注意事項 / 🍡 周邊小吃 / 🎁 必買伴手禮」
        ========================================================================== */
+    function normalizeMatchText(str) {
+      return String(str || '')
+        .toLowerCase()
+        .replace(/[\s・‧．。、，,（）()「」『』【】\[\]：:／/・\-－—~～]/g, '');
+    }
+
+    function extractKeywordTokens(text) {
+      if (!text) return [];
+      const rawParts = String(text).split(/[\s・‧．。、，,（）()「」『』【】\[\]：:／/→＋+&＆\-－—~～]/);
+      const stopWords = new Set([
+        '本店', '支店', '店', '駅', '車站', '周邊', '附近', '商圈', '老街', '街道',
+        '散策', '購物', '午餐', '晚餐', '宵夜', '美食', '早餐', '退房', '入住',
+        '前往', '開車', '搭乘', '徒步', '步行', '停留', '分鐘', '小時', '約', '至',
+        '的', '與', '及', '或', '之', '內', '前', '旁', '上', '下', '中', '日', '夜',
+        '飯店', '旅館', '溫泉', '神社', '公園', '市場', '百貨', '商場', '展望台',
+        '體驗', '參觀', '遊覽', '欣賞', '享用', '品嚐', '辦理', '準備', '返回'
+      ]);
+      const tokens = new Set();
+      rawParts.forEach(part => {
+        const clean = part.trim();
+        if (clean.length >= 2 && !stopWords.has(clean)) {
+          tokens.add(clean);
+        }
+      });
+      return Array.from(tokens);
+    }
+
+    // 針對部分簡稱或別稱建立精準別名對應，確保「該筆行程有提到才顯示，沒提到絕不誤顯示」
+    const ACTIVITY_ALIAS_RULES = [
+      { actPattern: /季楽/, targetPattern: /季楽/ },
+      { actPattern: /武雄神社|大楠神木/, targetPattern: /武雄神社|大楠神木/ },
+      { actPattern: /武雄市圖書館/, targetPattern: /武雄市図書館|蔦屋書店/ },
+      { actPattern: /居酒屋\s*甚八/, targetPattern: /甚八/ },
+      { actPattern: /御船山樂園/, targetPattern: /御船山樂園|御船山楽園/ },
+      { actPattern: /開泉食堂/, targetPattern: /開泉食堂/ },
+      { actPattern: /水前寺成趣園/, targetPattern: /水前寺成趣園|古今伝授の間/ },
+      { actPattern: /豚美/, targetPattern: /豚美/ },
+      { actPattern: /熊本城|城彩苑/, targetPattern: /熊本城|城彩苑|いきなり団子|杉養蜂園|香梅|菅乃屋/ },
+      { actPattern: /上通|下通|新市街/, targetPattern: /鶴屋|くまモン|香梅/ },
+      { actPattern: /勝烈亭/, targetPattern: /勝烈亭/ },
+      { actPattern: /高千穂牛レストラン\s*和/, targetPattern: /高千穂牛レストラン\s*和/ },
+      { actPattern: /高千穗峽|真名井瀑布/, targetPattern: /高千穗峽|高千穂/ },
+      { actPattern: /阿蘇山|中岳火口|草千里/, targetPattern: /阿蘇中岳火山口|草千里/ },
+      { actPattern: /阿蘇はなびし/, targetPattern: /阿蘇はなびし/ },
+      { actPattern: /九重.*大吊橋/, targetPattern: /九重.*大吊橋/ },
+      { actPattern: /湯之坪|Floral Village|湯布院/, targetPattern: /湯の坪|湯布院|B-speak|ミルヒ|鞠智|吉吾|菊家|金賞コロッケ|SNOOPY|花より|telato|バーガーハウス|醤油屋|クラフト館/ },
+      { actPattern: /九州自然動物園/, targetPattern: /九州自然動物園/ },
+      { actPattern: /亀正くるくる寿司/, targetPattern: /亀正くるくる寿司/ },
+      { actPattern: /WANDER COMPASS|別府地獄巡禮|海地獄/, targetPattern: /WANDER COMPASS|別府地獄巡禮|かまど茶屋|ひと休み|50CAFE|GOEMON/ },
+      { actPattern: /地獄蒸し工房|鉄輪/, targetPattern: /地獄蒸し工房|鉄輪豚まん|与八郎/ },
+      { actPattern: /チョロ松/, targetPattern: /チョロ松/ },
+      { actPattern: /天雲龍/, targetPattern: /天雲龍/ },
+      { actPattern: /秋月城跡/, targetPattern: /秋月|廣久葛本舗|月の峠|黒門茶屋/ },
+      { actPattern: /原鶴温泉|パーレンス小野屋/, targetPattern: /原鶴/ },
+      { actPattern: /八兵衛/, targetPattern: /八兵衛/ },
+      { actPattern: /雷山千如寺/, targetPattern: /雷山千如寺/ },
+      { actPattern: /一蘭之森/, targetPattern: /一蘭之森/ },
+      { actPattern: /糸島海鮮堂/, targetPattern: /糸島海鮮堂/ },
+      { actPattern: /櫻井二見浦|糸島海岸/, targetPattern: /糸島またいちの塩/ },
+      { actPattern: /博多らーめん|JR 博多城|博多車站/, targetPattern: /博多通りもん|めんべい|椒房庵|風美庵/ },
+      { actPattern: /博多運河城/, targetPattern: /フルフル博多|銀だこ|ディッパーダン/ },
+      { actPattern: /むさし坐/, targetPattern: /むさし坐/ },
+      { actPattern: /The BREAKFAST HOTEL|Grand Prime HAKATA/, targetPattern: /Grand Prime HAKATA|The BREAKFAST HOTEL/ },
+      { actPattern: /博多百貨商圈|博多阪急|AMU PLAZA|博多車站百貨/, targetPattern: /博多阪急|JR 博多|チョコレートショップ|カフェオスピターレ|鈴懸|蒸気屋|八天堂|三日月屋/ },
+      { actPattern: /本吉屋|松月乗船場|柳川遊船/, targetPattern: /本吉屋|松月乗船場/ },
+      { actPattern: /柳川沖端/, targetPattern: /柳川|沖端|椛島氷菓|River Flow|パティスリーさくら|茶餐無垢|ゴンシャン|カサナヤ|伯舟|氷\/果実/ },
+      { actPattern: /太宰府天滿宮|光明禪寺/, targetPattern: /太宰府|光明禪寺|かさの家|ふくや|伊都きんぐ|茶和々|VITO/ },
+      { actPattern: /和牛めんたい\s*神楽/, targetPattern: /神楽/ },
+      { actPattern: /竈門神社/, targetPattern: /竈門神社/ },
+      { actPattern: /天神百貨商圈|天神屋台/, targetPattern: /天神地下街|PRESS BUTTER|RINGO|BAKE CHEESE|ジャックインザドーナツ|JACK IN THE DONUTS|春水堂|小金ちゃん|まみちゃん|バル河野|ともちゃん|HEROS|さつまや|なかちゃん|喜柳|レミさんち|フルフル|MACCHA HOUSE|フルーツプラネット|I'm donut|茅乃舎|福岡三越/ },
+      { actPattern: /麵屋兼虎/, targetPattern: /兼虎/ },
+      { actPattern: /teamLab Forest/, targetPattern: /teamLab Forest/ },
+      { actPattern: /福岡塔/, targetPattern: /福岡タワー/ },
+      { actPattern: /博多水炊鍋専門\s*橙/, targetPattern: /橙/ },
+      { actPattern: /博多もつ鍋\s*徳永屋/, targetPattern: /徳永屋/ },
+      { actPattern: /魚町銀天街|旦過市場/, targetPattern: /旦過|魚町|きくたろう|シロヤ|揚子江|辻利茶舗|SHUN PAN|OCM|小倉かまぼこ|ふじた/ },
+      { actPattern: /小倉城|勝山公園/, targetPattern: /小倉城|勝山公園|今屋|ラポール|サンドッグ/ },
+      { actPattern: /皿倉山/, targetPattern: /皿倉山/ },
+      { actPattern: /お福\s*下関店/, targetPattern: /お福/ },
+      { actPattern: /おかもと鮮魚店/, targetPattern: /おかもと鮮魚店/ },
+      { actPattern: /唐戶市場/, targetPattern: /唐戸市場|唐戶市場|柳川水産/ },
+      { actPattern: /プリンセスピピ門司港/, targetPattern: /プリンセスピピ門司港/ },
+      { actPattern: /門司港懷舊/, targetPattern: /門司港|Mooon|吉吾|Bana1|Dolce|なごし|梅月|芋伝説|ハイカラ屋|ミルクホール/ },
+      { actPattern: /小倉站周邊商圈/, targetPattern: /小倉|シロヤ|VIERRA|井筒屋/ },
+      { actPattern: /たんがほるもん|焼肉の龍園/, targetPattern: /たんがほるもん|龍園/ },
+      { actPattern: /北九州機場|小倉駅バスセンター/, targetPattern: /北九州空港|北九州機場/ }
+    ];
+
+    function isItemRelevantToActivity(act, candidateText) {
+      if (!act || !candidateText) return false;
+      const actRaw = `${act.title || ''} ${act.jpCopyName || ''} ${act.jpCopyNameAlt || ''}`;
+      const candRaw = String(candidateText);
+
+      // 1. 檢查精準別名對應
+      for (const rule of ACTIVITY_ALIAS_RULES) {
+        if (rule.actPattern.test(actRaw) && rule.targetPattern.test(candRaw)) {
+          return true;
+        }
+      }
+
+      // 2. 直接比對日文店名/地名是否出現於目標文字中
+      const normCand = normalizeMatchText(candRaw);
+      const jp1 = normalizeMatchText(act.jpCopyName);
+      const jp2 = normalizeMatchText(act.jpCopyNameAlt);
+      if (jp1 && jp1.length >= 2 && normCand.includes(jp1)) return true;
+      if (jp2 && jp2.length >= 2 && normCand.includes(jp2)) return true;
+
+      // 3. 關鍵詞交集比對（僅針對該筆活動標題與日文名稱，避免誤判）
+      const actTokens = extractKeywordTokens(actRaw);
+      for (const tok of actTokens) {
+        const normTok = normalizeMatchText(tok);
+        if (normTok.length >= 3 && normCand.includes(normTok)) {
+          return true;
+        }
+      }
+      return false;
+    }
+
+    function getActivitySpecificAttachments(dayObj, act) {
+      // 1. 篩選僅屬於此筆行程的注意事項
+      const matchedNotes = (dayObj.operationalNotes || []).filter(n =>
+        isItemRelevantToActivity(act, `${n.target} ${n.note}`)
+      );
+
+      // 2. 篩選僅屬於此筆行程的周邊小吃（支援一般 streetSnacks 與 Day 8 的分群 snackGroups）
+      const matchedSnacks = [];
+      if (dayObj.streetSnacks && dayObj.streetSnacks.length > 0) {
+        dayObj.streetSnacks.forEach(s => {
+          if (isItemRelevantToActivity(act, `${s.name} ${s.location}`)) {
+            matchedSnacks.push(s);
+          }
+        });
+      }
+      if (dayObj.snackGroups && dayObj.snackGroups.length > 0) {
+        dayObj.snackGroups.forEach(g => {
+          const groupMatches = isItemRelevantToActivity(act, g.groupTitle);
+          g.items.forEach(s => {
+            if (groupMatches || isItemRelevantToActivity(act, `${s.name} ${s.location}`)) {
+              matchedSnacks.push({ ...s, groupLabel: g.groupTitle });
+            }
+          });
+        });
+      }
+
+      // 3. 篩選僅屬於此筆行程的必買伴手禮
+      const matchedSouvenirs = (dayObj.souvenirs || []).filter(sv =>
+        isItemRelevantToActivity(act, `${sv.item} ${sv.shop}`)
+      );
+
+      return {
+        notes: matchedNotes,
+        snacks: matchedSnacks,
+        souvenirs: matchedSouvenirs
+      };
+    }
+
     function openActivityInfoModal(dayNum, activityId, infoType) {
       const dayObj = itineraryData.find(d => d.day === dayNum);
       if (!dayObj) return;
-      const item = dayObj.timeline.find(t => t.id === activityId);
-      if (!item) return;
+      const act = dayObj.timeline.find(t => t.id === activityId);
+      if (!act) return;
 
-      const ctxData = getActivityContextData(dayObj, item);
-
-      const headerEl = document.getElementById('infoModalHeader');
-      const dayBadgeEl = document.getElementById('infoModalDayBadge');
-      const typeBadgeEl = document.getElementById('infoModalTypeBadge');
+      const attachments = getActivitySpecificAttachments(dayObj, act);
+      const modal = document.getElementById('activityInfoModal');
+      const header = document.getElementById('infoModalHeader');
+      const dayBadge = document.getElementById('infoModalDayBadge');
+      const typeBadge = document.getElementById('infoModalTypeBadge');
       const titleEl = document.getElementById('infoModalTitle');
       const bodyEl = document.getElementById('infoModalBody');
 
-      dayBadgeEl.textContent = `Day ${dayObj.day} · ${item.time}`;
-      titleEl.textContent = item.title;
+      dayBadge.textContent = `Day ${dayObj.day}（${act.time}）`;
+      titleEl.textContent = act.title;
 
       if (infoType === 'notes') {
-        headerEl.className = 'px-4 py-3.5 bg-gradient-to-r from-maple to-mapleDark text-white flex items-center justify-between gap-2 shrink-0';
-        typeBadgeEl.textContent = '⚠️ 該行程注意事項';
-        bodyEl.innerHTML = ctxData.notes.map(n => `
-          <div class="p-3.5 rounded-2xl bg-red-50/75 border border-maple/25 space-y-1.5">
-            <p class="text-xs sm:text-sm font-bold text-maple">📌 ${escapeHtml(n.target)}</p>
+        header.className = 'px-4 py-3.5 bg-gradient-to-r from-maple to-mapleDark text-white flex items-center justify-between gap-2 shrink-0';
+        typeBadge.textContent = `⚠️ 本站注意事項（${attachments.notes.length} 則）`;
+        bodyEl.innerHTML = attachments.notes.map(n => `
+          <div class="p-3.5 rounded-2xl bg-red-50/85 border border-maple/30 space-y-1">
+            <p class="text-xs sm:text-sm font-bold text-maple">● ${escapeHtml(n.target)}</p>
             <p class="text-xs sm:text-sm text-ink leading-relaxed">${escapeHtml(n.note)}</p>
           </div>
         `).join('');
       } else if (infoType === 'snacks') {
-        headerEl.className = 'px-4 py-3.5 bg-gradient-to-r from-amber-700 to-amber-900 text-white flex items-center justify-between gap-2 shrink-0';
-        typeBadgeEl.textContent = `🍡 周邊小吃推薦（${ctxData.snacks.length} 樣）`;
-        bodyEl.innerHTML = ctxData.snacks.map(s => `
+        header.className = 'px-4 py-3.5 bg-gradient-to-r from-ginkgo to-amber-600 text-white flex items-center justify-between gap-2 shrink-0';
+        typeBadge.textContent = `🍡 本站周邊小吃（${attachments.snacks.length} 樣）`;
+        bodyEl.innerHTML = attachments.snacks.map(s => `
           <div class="p-3.5 rounded-2xl bg-parchment border border-woodBorder space-y-1.5">
+            ${s.groupLabel ? `<p class="text-[11px] font-bold text-amber-800">${escapeHtml(s.groupLabel)}</p>` : ''}
             <div class="flex items-start justify-between gap-2">
               <p class="text-xs sm:text-sm font-bold text-ink">${escapeHtml(s.name)}</p>
               <button
                 type="button"
-                onclick="copyJapaneseName('${escapeAttr(s.name)}')"
-                class="shrink-0 px-2.5 py-1 rounded-xl bg-white hover:bg-ginkgoLight/70 border border-woodBorder text-xs font-bold text-ink active:scale-95 transition shadow-2xs"
+                onclick="copyJapaneseName('${escapeHtml(s.name)}')"
+                class="shrink-0 px-2 py-0.5 rounded-lg bg-white border border-woodBorder text-[11px] font-medium text-inkMuted hover:text-maple active:scale-95 transition"
               >
-                📋 一鍵複製日文店名
+                📋 複製店名
               </button>
             </div>
-            <p class="text-xs text-moss font-medium">📍 ${escapeHtml(s.location)}</p>
+            <p class="text-[11px] text-moss font-medium">📍 ${escapeHtml(s.location)}</p>
             <p class="text-xs text-inkMuted leading-relaxed">${escapeHtml(s.feature)}</p>
           </div>
         `).join('');
       } else if (infoType === 'souvenirs') {
-        headerEl.className = 'px-4 py-3.5 bg-gradient-to-r from-moss to-ink text-white flex items-center justify-between gap-2 shrink-0';
-        typeBadgeEl.textContent = `🎁 必買伴手禮（${ctxData.souvenirs.length} 項）`;
-        bodyEl.innerHTML = ctxData.souvenirs.map(sv => {
-          const cleanShopName = sv.shop.split('（')[0].trim();
-          return `
-            <div class="p-3.5 rounded-2xl bg-parchment border border-woodBorder space-y-2">
-              <div>
-                <p class="text-xs sm:text-sm font-bold text-ink">🛍️ ${escapeHtml(sv.item)}</p>
-                <p class="text-xs text-inkMuted mt-0.5">🏪 ${escapeHtml(sv.shop)}</p>
-              </div>
-              <div class="flex flex-wrap items-center gap-1.5 pt-1 border-t border-woodBorder/60">
-                <button
-                  type="button"
-                  onclick="copyJapaneseName('${escapeAttr(cleanShopName)}')"
-                  class="px-2.5 py-1 rounded-xl bg-white hover:bg-mossLight border border-woodBorder text-xs font-bold text-moss active:scale-95 transition"
-                >
-                  📋 複製日文店名
-                </button>
-                <button
-                  type="button"
-                  onclick="copyJapaneseName('${escapeAttr(sv.item)}')"
-                  class="px-2.5 py-1 rounded-xl bg-white hover:bg-ginkgoLight/60 border border-woodBorder text-xs font-bold text-ink active:scale-95 transition"
-                >
-                  📋 複製商品名
-                </button>
-              </div>
+        header.className = 'px-4 py-3.5 bg-gradient-to-r from-moss to-emerald-800 text-white flex items-center justify-between gap-2 shrink-0';
+        typeBadge.textContent = `🎁 本站必買伴手禮（${attachments.souvenirs.length} 項）`;
+        bodyEl.innerHTML = attachments.souvenirs.map(sv => `
+          <div class="p-3.5 rounded-2xl bg-mossLight/60 border border-moss/25 space-y-1.5">
+            <div class="flex items-start justify-between gap-2">
+              <p class="text-xs sm:text-sm font-bold text-ink">🎁 ${escapeHtml(sv.item)}</p>
+              <button
+                type="button"
+                onclick="copyJapaneseName('${escapeHtml(sv.item)}')"
+                class="shrink-0 px-2 py-0.5 rounded-lg bg-white border border-moss/30 text-[11px] font-medium text-moss hover:bg-moss hover:text-white active:scale-95 transition"
+              >
+                📋 複製名稱
+              </button>
             </div>
-          `;
-        }).join('');
+            <p class="text-xs text-inkMuted leading-relaxed">🏪 推薦購買店鋪：${escapeHtml(sv.shop)}</p>
+          </div>
+        `).join('');
       }
 
-      const modal = document.getElementById('activityInfoModal');
       modal.classList.remove('hidden');
       modal.classList.add('flex');
     }
@@ -5133,109 +4608,278 @@
       modal.classList.remove('flex');
     }
 
-    // 即時天氣抓取（已清除 Open-Meteo 標籤並保留日本氣象廳官方預報連結）
-    async function fetchDayWeather(dayObj) {
-      const widget = document.getElementById('liveWeatherWidget');
-      if (!widget) return;
+    function renderDayContent(dayNum) {
+      const dayObj = itineraryData.find(d => d.day === dayNum);
+      if (!dayObj) return;
 
-      const jmaInfo = JMA_FORECAST_LINKS[dayObj.day] || {
-        region: "日本氣象廳預報",
-        url: "https://www.jma.go.jp/bosai/forecast/"
-      };
+      const container = document.getElementById('dayContentContainer');
+      const dayTotalJpy = getDayTotalJpy(dayObj.day);
 
-      const renderWidgetHtml = (icon, mainLine, subLine) => `
-        <div class="flex items-center justify-between gap-2">
-          <div>
-            <p class="text-xs font-bold text-moss">
-              ${icon} ${escapeHtml(dayObj.weatherCity)} 當地即時天氣
-            </p>
-            <p class="text-sm sm:text-base font-bold text-ink mt-0.5">
-              ${mainLine}
-            </p>
-            <p class="text-[11px] text-inkMuted mt-0.5">
-              ${subLine}
-            </p>
+      // 1. 高海拔黑冰警示橫幅（僅 Day 3 ~ Day 5 顯示）
+      const blackIceBannerHtml = dayObj.hasBlackIceWarning ? `
+        <div class="storybook-card p-3.5 sm:p-4 bg-amber-50/95 border-2 border-amber-400 flex items-start gap-3">
+          <span class="text-xl sm:text-2xl shrink-0">❄️</span>
+          <div class="text-xs sm:text-sm text-amber-950 leading-relaxed">
+            <p class="font-bold text-maple">⚠️ 高海拔山區黑冰（Black Ice）自駕預警（Day 3 – Day 5）</p>
+            <p class="mt-0.5">今日行經高海拔山區，清晨與夜間氣溫可能跌破 0°C 並產生肉眼難辨的路面黑冰。<strong>務必確認車輛已配備雪胎（Studless）</strong>，過彎與橋面提前減速、嚴禁急煞。</p>
           </div>
-          <span class="text-3xl">${icon}</span>
         </div>
-        <div class="pt-1.5 border-t border-woodBorder/70 flex items-center justify-between gap-2">
-          <span class="text-[11px] text-inkMuted">${escapeHtml(jmaInfo.region)}</span>
-          <a
-            href="${jmaInfo.url}"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="px-2.5 py-1 rounded-lg bg-moss/12 hover:bg-moss text-moss hover:text-white border border-moss/25 text-xs font-bold transition active:scale-95 inline-flex items-center gap-1"
+      ` : '';
+
+      // 2. 交通模式專屬模組（自駕路線與停車場 vs 大眾運輸票券動線）
+      let transportCardHtml = '';
+      if (dayObj.transportMode === 'self-drive' && dayObj.drivingGuide) {
+        const parkingsList = dayObj.drivingGuide.parkings.map(p => `
+          <div class="p-2.5 rounded-xl bg-white/90 border border-woodBorder flex flex-col sm:flex-row sm:items-center justify-between gap-1 text-xs">
+            <span class="font-bold text-ink">🅿️ ${escapeHtml(p.place)}</span>
+            <span class="text-moss font-medium">${escapeHtml(p.note)}</span>
+          </div>
+        `).join('');
+
+        transportCardHtml = `
+          <div class="storybook-card p-4 sm:p-5 bg-mossLight/45 border-moss/30 space-y-3">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <h3 class="text-sm sm:text-base font-bold text-moss flex items-center gap-1.5">
+                <span>🚗</span> 當日自駕路線與停車場指南
+              </h3>
+              ${dayObj.googleMapsRouteUrl ? `
+                <a
+                  href="${escapeHtml(dayObj.googleMapsRouteUrl)}"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="px-3 py-1.5 rounded-xl bg-moss text-white text-xs font-bold hover:opacity-95 active:scale-95 transition inline-flex items-center gap-1 shadow-sm"
+                >
+                  <span>🗺️</span> 開啟 Google Maps 全程導航
+                </a>
+              ` : ''}
+            </div>
+            <p class="text-xs sm:text-sm text-ink bg-white/80 p-3 rounded-xl border border-woodBorder leading-relaxed">
+              <strong>建議動線：</strong>${escapeHtml(dayObj.drivingGuide.routeText)}
+            </p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+              ${parkingsList}
+            </div>
+          </div>
+        `;
+      } else if (dayObj.transportMode === 'transit' && dayObj.transitTicketGuide) {
+        transportCardHtml = `
+          <div class="storybook-card p-4 sm:p-5 bg-mossLight/45 border-moss/30 space-y-2.5">
+            <h3 class="text-sm sm:text-base font-bold text-moss flex items-center gap-1.5">
+              <span>🚆</span> 當日大眾運輸與交通票券建議
+            </h3>
+            <div class="text-xs sm:text-sm space-y-1.5 bg-white/85 p-3 rounded-xl border border-woodBorder">
+              <p><strong class="text-moss">🎫 建議使用票券：</strong>${escapeHtml(dayObj.transitTicketGuide.tickets)}</p>
+              <p class="leading-relaxed"><strong class="text-ink">🛤️ 轉乘動線總覽：</strong>${escapeHtml(dayObj.transitTicketGuide.route)}</p>
+            </div>
+          </div>
+        `;
+      }
+
+      // 3. 時間軸卡片列表（僅在該筆行程真正有專屬附件時，才於卡片下方顯示對應小標籤！）
+      const timelineHtml = dayObj.timeline.map(act => {
+        const actExpenses = getActivityExpenses(act.id);
+        const actTotalJpy = actExpenses.reduce((s, e) => s + (Number(e.amountJpy) || 0), 0);
+        const attachments = getActivitySpecificAttachments(dayObj, act);
+
+        const copyBtn1 = act.jpCopyName ? `
+          <button
+            type="button"
+            onclick="copyJapaneseName('${escapeHtml(act.jpCopyName)}')"
+            class="px-2.5 py-1 rounded-lg bg-parchment border border-woodBorder text-[11px] font-medium text-inkMuted hover:text-maple hover:border-maple/40 active:scale-95 transition inline-flex items-center gap-1"
+            title="點擊複製日文名稱以便貼上導航或翻譯"
           >
-            <span>🇯🇵 日本氣象廳預報 ↗</span>
-          </a>
+            <span>📋</span>
+            <span>複製日文：${escapeHtml(act.jpCopyName)}</span>
+          </button>
+        ` : '';
+
+        const copyBtn2 = act.jpCopyNameAlt ? `
+          <button
+            type="button"
+            onclick="copyJapaneseName('${escapeHtml(act.jpCopyNameAlt)}')"
+            class="px-2.5 py-1 rounded-lg bg-parchment border border-woodBorder text-[11px] font-medium text-inkMuted hover:text-maple hover:border-maple/40 active:scale-95 transition inline-flex items-center gap-1"
+          >
+            <span>📋</span>
+            <span>${escapeHtml(act.jpCopyNameAlt)}</span>
+          </button>
+        ` : '';
+
+        // 專屬小標籤按鈕列（僅在該行程有對應資料時出現，絕不誤顯示）
+        const hasAnySpecificTag =
+          attachments.notes.length > 0 ||
+          attachments.snacks.length > 0 ||
+          attachments.souvenirs.length > 0;
+
+        const specificTagsHtml = hasAnySpecificTag ? `
+          <div class="mt-2.5 pt-2 border-t border-dashed border-woodBorder/80 flex flex-wrap items-center gap-1.5">
+            ${attachments.notes.length > 0 ? `
+              <button
+                type="button"
+                onclick="openActivityInfoModal(${dayObj.day}, '${escapeHtml(act.id)}', 'notes')"
+                class="px-2.5 py-1 rounded-full text-[11px] font-bold bg-red-50 text-maple border border-maple/35 hover:bg-maple hover:text-white active:scale-95 transition inline-flex items-center gap-1 shadow-2xs"
+              >
+                <span>⚠️</span>
+                <span>注意事項 (${attachments.notes.length})</span>
+              </button>
+            ` : ''}
+            ${attachments.snacks.length > 0 ? `
+              <button
+                type="button"
+                onclick="openActivityInfoModal(${dayObj.day}, '${escapeHtml(act.id)}', 'snacks')"
+                class="px-2.5 py-1 rounded-full text-[11px] font-bold bg-amber-50 text-amber-900 border border-ginkgo/45 hover:bg-ginkgo hover:text-white active:scale-95 transition inline-flex items-center gap-1 shadow-2xs"
+              >
+                <span>🍡</span>
+                <span>周邊小吃 (${attachments.snacks.length})</span>
+              </button>
+            ` : ''}
+            ${attachments.souvenirs.length > 0 ? `
+              <button
+                type="button"
+                onclick="openActivityInfoModal(${dayObj.day}, '${escapeHtml(act.id)}', 'souvenirs')"
+                class="px-2.5 py-1 rounded-full text-[11px] font-bold bg-mossLight text-moss border border-moss/35 hover:bg-moss hover:text-white active:scale-95 transition inline-flex items-center gap-1 shadow-2xs"
+              >
+                <span>🎁</span>
+                <span>必買伴手禮 (${attachments.souvenirs.length})</span>
+              </button>
+            ` : ''}
+          </div>
+        ` : '';
+
+        return `
+          <div class="storybook-card storybook-card-hover p-3.5 sm:p-4 relative">
+            <div class="flex flex-wrap items-center justify-between gap-2 mb-1.5">
+              <div class="flex items-center gap-2">
+                <span class="px-2.5 py-0.5 rounded-lg bg-maple/12 text-maple font-mono text-xs font-bold">
+                  ${escapeHtml(act.time)}
+                </span>
+                <span class="px-2 py-0.5 rounded-md bg-moss/12 text-moss text-[11px] font-bold">
+                  ${escapeHtml(act.categoryTag)}
+                </span>
+              </div>
+
+              <!-- 單一精準「＋記一筆」按鈕（若已有記帳則同步顯示筆數與小計） -->
+              <button
+                type="button"
+                onclick="openActivityExpenseModal(${dayObj.day}, '${escapeHtml(act.id)}', '${escapeHtml(act.title)}')"
+                class="min-h-[34px] px-3 py-1 rounded-xl text-xs font-bold transition active:scale-95 flex items-center gap-1.5 ${
+                  actExpenses.length > 0
+                    ? 'bg-ginkgo text-white shadow-sm hover:opacity-95'
+                    : 'bg-maple text-white shadow-sm hover:bg-mapleDark'
+                }"
+              >
+                <span>${actExpenses.length > 0 ? '📒' : '＋'}</span>
+                <span>${actExpenses.length > 0 ? `已記 ${actExpenses.length} 筆 (${formatJpy(actTotalJpy)})` : '記一筆'}</span>
+              </button>
+            </div>
+
+            <h4 class="text-sm sm:text-base font-bold text-ink leading-snug">
+              ${escapeHtml(act.title)}
+            </h4>
+
+            <p class="text-xs sm:text-sm text-inkMuted mt-1 leading-relaxed">
+              ${escapeHtml(act.description)}
+            </p>
+
+            ${(copyBtn1 || copyBtn2) ? `
+              <div class="mt-2.5 flex flex-wrap items-center gap-1.5">
+                ${copyBtn1}
+                ${copyBtn2}
+              </div>
+            ` : ''}
+
+            ${specificTagsHtml}
+          </div>
+        `;
+      }).join('');
+
+      container.innerHTML = `
+        <!-- 當日總覽英雄卡片 -->
+        <div class="storybook-card p-4 sm:p-6 bg-gradient-to-br from-woodcard via-woodcard to-ginkgoLight/25 space-y-3">
+          <div class="flex flex-wrap items-center justify-between gap-2">
+            <div class="flex items-center gap-2">
+              <span class="px-3 py-1 rounded-xl bg-maple text-white font-serif font-bold text-sm">
+                Day ${dayObj.day}
+              </span>
+              <span class="text-xs sm:text-sm font-bold text-inkMuted">
+                ${dayObj.date}（${dayObj.weekday}）
+              </span>
+            </div>
+            <div class="text-xs font-bold px-3 py-1 rounded-xl bg-ginkgoLight/70 text-amber-950">
+              當日累計花費：${formatJpy(dayTotalJpy)}（約 ${formatTwd(dayTotalJpy)}）
+            </div>
+          </div>
+
+          <h2 class="text-base sm:text-xl font-bold text-ink leading-snug">
+            ${escapeHtml(dayObj.title)}
+          </h2>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs pt-1">
+            <div class="p-2.5 rounded-xl bg-parchment border border-woodBorder">
+              <span class="text-inkMuted">🚘 交通方式：</span>
+              <strong class="text-ink">${escapeHtml(dayObj.transportSummary)}</strong>
+            </div>
+            <div class="p-2.5 rounded-xl bg-parchment border border-woodBorder">
+              <span class="text-inkMuted">🏨 住宿地點：</span>
+              <strong class="text-ink">${escapeHtml(dayObj.accommodation)}</strong>
+            </div>
+          </div>
+
+          <div class="p-2.5 rounded-xl bg-parchment/80 border border-woodBorder text-xs">
+            <span class="font-bold text-maple">✨ 行程亮點：</span>
+            <span class="text-ink">${escapeHtml(dayObj.highlights)}</span>
+          </div>
+
+          <!-- 當日即時當地氣象與分區穿搭提示 -->
+          <div class="p-3 rounded-xl bg-white/90 border border-woodBorder space-y-1.5">
+            <div id="liveWeatherBox-day-${dayObj.day}">
+              <span class="text-xs text-inkMuted">🌤️ 正在讀取當地即時氣象...</span>
+            </div>
+            <div class="text-xs text-inkMuted border-t border-woodBorder/60 pt-1.5">
+              <strong class="text-moss">🧣 氣候穿搭建議（${escapeHtml(dayObj.climateGuide.zone)}）：</strong>
+              預估 ${escapeHtml(dayObj.climateGuide.tempRange)}。${escapeHtml(dayObj.climateGuide.clothingTip)}
+            </div>
+          </div>
+        </div>
+
+        ${blackIceBannerHtml}
+        ${transportCardHtml}
+
+        <!-- 時間軸行程卡片區 -->
+        <div class="space-y-3">
+          <div class="flex flex-wrap items-center justify-between gap-1 px-1">
+            <h3 class="text-base font-bold text-ink flex items-center gap-1.5">
+              <span>🕰️</span> 每日時間軸行程（點擊小標籤查看該站注意事項／小吃／伴手禮）
+            </h3>
+            <span class="text-[11px] text-inkMuted">共 ${dayObj.timeline.length} 個節點</span>
+          </div>
+          ${timelineHtml}
         </div>
       `;
 
-      const cacheKey = `${dayObj.lat},${dayObj.lon}`;
-      if (state.weatherCache[cacheKey]) {
-        const w = state.weatherCache[cacheKey];
-        const info = interpretWeatherCode(w.weathercode);
-        widget.innerHTML = renderWidgetHtml(
-          info.icon,
-          `目前氣溫 ${w.temperature}°C <span class="text-xs font-normal text-inkMuted">（${info.label}）</span>`,
-          `風速 ${w.windspeed} km/h · 12 月預估區間：${escapeHtml(dayObj.climateGuide.tempRange)}`
-        );
-        return;
-      }
-
-      try {
-        const url = `https://api.open-meteo.com/v1/forecast?latitude=${dayObj.lat}&longitude=${dayObj.lon}&current_weather=true&timezone=Asia%2FTokyo`;
-        const res = await fetch(url);
-        if (!res.ok) throw new Error('Weather API failed');
-        const data = await res.json();
-        if (data && data.current_weather) {
-          state.weatherCache[cacheKey] = data.current_weather;
-          const w = data.current_weather;
-          const info = interpretWeatherCode(w.weathercode);
-          widget.innerHTML = renderWidgetHtml(
-            info.icon,
-            `目前氣溫 ${w.temperature}°C <span class="text-xs font-normal text-inkMuted">（${info.label}）</span>`,
-            `風速 ${w.windspeed} km/h · 12 月預估區間：${escapeHtml(dayObj.climateGuide.tempRange)}`
-          );
-          return;
-        }
-        throw new Error('No current weather');
-      } catch (err) {
-        widget.innerHTML = renderWidgetHtml(
-          '🧣',
-          `12 月預估：${escapeHtml(dayObj.climateGuide.tempRange)}`,
-          `${escapeHtml(dayObj.climateGuide.zone)}（離線氣候參考）`
-        );
-      }
-    }
-
-    function interpretWeatherCode(code) {
-      if (code === 0) return { icon: '☀️', label: '晴朗無雲' };
-      if (code <= 3) return { icon: '⛅', label: '多雲時晴' };
-      if (code <= 48) return { icon: '🌫️', label: '有霧／晨霧' };
-      if (code <= 67) return { icon: '🌧️', label: '小雨／細雨' };
-      if (code <= 77) return { icon: '❄️', label: '降雪／雨夾雪' };
-      if (code <= 82) return { icon: '🌦️', label: '陣雨' };
-      return { icon: '🌩️', label: '雷陣雨' };
+      loadLiveWeatherForDay(dayObj);
     }
 
     /* ==========================================================================
-       七、單一行程「＋記一筆」彈窗（同步新增、編輯、刪除、顯示付款方式）
+       八、行程卡片「＋記一筆」同步檢視與編刪彈窗（含付款方式）
        ========================================================================== */
-    function openActivityExpenseModal(dayNum, activityId) {
-      const dayObj = itineraryData.find(d => d.day === dayNum);
-      if (!dayObj) return;
-      const act = dayObj.timeline.find(t => t.id === activityId);
-      if (!act) return;
+    function populateCategorySelect(selectEl, selectedVal) {
+      if (!selectEl) return;
+      selectEl.innerHTML = appState.categories.map(cat => `
+        <option value="${escapeHtml(cat)}" ${cat === selectedVal ? 'selected' : ''}>${escapeHtml(cat)}</option>
+      `).join('');
+    }
 
-      state.activeActivityContext = {
-        day: dayNum,
-        activityId: act.id,
-        activityTitle: act.title
-      };
+    function populatePaymentSelect(selectEl, selectedVal) {
+      if (!selectEl) return;
+      selectEl.innerHTML = appState.payments.map(pay => `
+        <option value="${escapeHtml(pay)}" ${pay === selectedVal ? 'selected' : ''}>${escapeHtml(pay)}</option>
+      `).join('');
+    }
 
-      document.getElementById('actModalDayBadge').textContent = `Day ${dayNum} · ${act.time}`;
-      document.getElementById('actModalTitle').textContent = act.title;
+    function openActivityExpenseModal(dayNum, activityId, activityTitle) {
+      appState.currentActModal = { day: dayNum, activityId, activityTitle };
+      document.getElementById('actModalDayBadge').textContent = `Day ${dayNum}`;
+      document.getElementById('actModalTitle').textContent = activityTitle;
 
       resetActExpenseForm();
       renderActivityModalHistory();
@@ -5249,7 +4893,7 @@
       const modal = document.getElementById('activityExpenseModal');
       modal.classList.add('hidden');
       modal.classList.remove('flex');
-      state.activeActivityContext = null;
+      resetActExpenseForm();
     }
 
     function resetActExpenseForm() {
@@ -5261,599 +4905,419 @@
       document.getElementById('actNoteInput').value = '';
       document.getElementById('actInlineNewCatBox').classList.add('hidden');
       document.getElementById('actInlineNewPayBox').classList.add('hidden');
-
-      let defaultCat = state.categories[0] || FALLBACK_CATEGORY;
-      if (state.activeActivityContext) {
-        const dayObj = itineraryData.find(d => d.day === state.activeActivityContext.day);
-        const act = dayObj && dayObj.timeline.find(t => t.id === state.activeActivityContext.activityId);
-        if (act) {
-          if (act.categoryTag.includes('餐') || act.categoryTag.includes('美食') || act.categoryTag.includes('宵夜') || act.categoryTag.includes('晚宴')) {
-            if (state.categories.includes('美食餐飲')) defaultCat = '美食餐飲';
-          } else if (act.categoryTag.includes('移動') || act.categoryTag.includes('自駕') || act.categoryTag.includes('高速') || act.categoryTag.includes('地鐵') || act.categoryTag.includes('特急') || act.categoryTag.includes('新幹線') || act.categoryTag.includes('接駁') || act.categoryTag.includes('巴士')) {
-            if (state.categories.includes('交通停車')) defaultCat = '交通停車';
-          } else if (act.categoryTag.includes('購物') || act.categoryTag.includes('百貨') || act.categoryTag.includes('採購') || act.categoryTag.includes('血拼')) {
-            if (state.categories.includes('伴手禮購物')) defaultCat = '伴手禮購物';
-          } else if (act.categoryTag.includes('入住') || act.categoryTag.includes('退房')) {
-            if (state.categories.includes('住宿費用')) defaultCat = '住宿費用';
-          } else if (act.categoryTag.includes('賞楓') || act.categoryTag.includes('遊船') || act.categoryTag.includes('纜車') || act.categoryTag.includes('展覽') || act.categoryTag.includes('夜祭') || act.categoryTag.includes('動物')) {
-            if (state.categories.includes('門票體驗')) defaultCat = '門票體驗';
-          }
-        }
-      }
-      populateCategorySelect('actCategorySelect', defaultCat);
-      populatePaymentSelect('actPaymentSelect', '現金');
-    }
-
-    function populateCategorySelect(selectId, selectedValue) {
-      const sel = document.getElementById(selectId);
-      if (!sel) return;
-      sel.innerHTML = state.categories.map(cat => `
-        <option value="${escapeAttr(cat)}" ${cat === selectedValue ? 'selected' : ''}>
-          ${escapeHtml(cat)}
-        </option>
-      `).join('');
-    }
-
-    function populatePaymentSelect(selectId, selectedValue) {
-      const sel = document.getElementById(selectId);
-      if (!sel) return;
-      const targetVal = selectedValue || '現金';
-      sel.innerHTML = state.paymentMethods.map(pay => `
-        <option value="${escapeAttr(pay)}" ${pay === targetVal ? 'selected' : ''}>
-          ${escapeHtml(pay)}
-        </option>
-      `).join('');
+      populateCategorySelect(document.getElementById('actCategorySelect'), appState.categories[0] || '餐飲');
+      populatePaymentSelect(document.getElementById('actPaymentSelect'), appState.payments[0] || '現金 (JPY)');
     }
 
     function toggleInlineNewCat(prefix) {
       const box = document.getElementById(`${prefix}InlineNewCatBox`);
-      const input = document.getElementById(`${prefix}InlineNewCatInput`);
-      if (!box) return;
       box.classList.toggle('hidden');
-      if (!box.classList.contains('hidden') && input) {
-        input.value = '';
-        input.focus();
-      }
-    }
-
-    function confirmInlineNewCat(prefix) {
-      const input = document.getElementById(`${prefix}InlineNewCatInput`);
-      if (!input) return;
-      const added = addCustomCategory(input.value);
-      if (added) {
-        populateCategorySelect(`${prefix}CategorySelect`, added);
-        document.getElementById(`${prefix}InlineNewCatBox`).classList.add('hidden');
-        showToast(`已新增類別「${added}」`);
+      if (!box.classList.contains('hidden')) {
+        document.getElementById(`${prefix}InlineNewCatInput`).focus();
       }
     }
 
     function toggleInlineNewPay(prefix) {
       const box = document.getElementById(`${prefix}InlineNewPayBox`);
-      const input = document.getElementById(`${prefix}InlineNewPayInput`);
-      if (!box) return;
       box.classList.toggle('hidden');
-      if (!box.classList.contains('hidden') && input) {
-        input.value = '';
-        input.focus();
+      if (!box.classList.contains('hidden')) {
+        document.getElementById(`${prefix}InlineNewPayInput`).focus();
       }
+    }
+
+    function confirmInlineNewCat(prefix) {
+      const input = document.getElementById(`${prefix}InlineNewCatInput`);
+      const newName = input.value.trim();
+      if (!newName) {
+        showToast('⚠️ 請輸入類別名稱');
+        return;
+      }
+      if (!appState.categories.includes(newName)) {
+        appState.categories.push(newName);
+        saveCategoriesToStorage();
+      }
+      const selectEl = document.getElementById(`${prefix}CategorySelect`);
+      populateCategorySelect(selectEl, newName);
+      input.value = '';
+      document.getElementById(`${prefix}InlineNewCatBox`).classList.add('hidden');
+      showToast(`🏷️ 已新增並選取類別「${newName}」`);
     }
 
     function confirmInlineNewPay(prefix) {
       const input = document.getElementById(`${prefix}InlineNewPayInput`);
-      if (!input) return;
-      const added = addCustomPaymentMethod(input.value);
-      if (added) {
-        populatePaymentSelect(`${prefix}PaymentSelect`, added);
-        document.getElementById(`${prefix}InlineNewPayBox`).classList.add('hidden');
-        showToast(`已新增付款方式「${added}」`);
+      const newName = input.value.trim();
+      if (!newName) {
+        showToast('⚠️ 請輸入付款方式名稱');
+        return;
       }
+      if (!appState.payments.includes(newName)) {
+        appState.payments.push(newName);
+        savePaymentsToStorage();
+      }
+      const selectEl = document.getElementById(`${prefix}PaymentSelect`);
+      populatePaymentSelect(selectEl, newName);
+      input.value = '';
+      document.getElementById(`${prefix}InlineNewPayBox`).classList.add('hidden');
+      showToast(`💳 已新增並選取付款方式「${newName}」`);
     }
 
     function handleSaveActivityExpense(e) {
       e.preventDefault();
-      if (!state.activeActivityContext) return;
-
       const editingId = document.getElementById('actEditingExpenseId').value;
-      const category = document.getElementById('actCategorySelect').value || FALLBACK_CATEGORY;
-      const paymentMethod = document.getElementById('actPaymentSelect').value || '現金';
-      const amount = Math.round(Number(document.getElementById('actAmountInput').value));
+      const category = document.getElementById('actCategorySelect').value;
+      const paymentMethod = document.getElementById('actPaymentSelect').value || '現金 (JPY)';
+      const amountJpy = Math.round(Number(document.getElementById('actAmountInput').value));
       const note = document.getElementById('actNoteInput').value.trim();
 
-      if (isNaN(amount) || amount <= 0) {
-        showToast('請輸入大於 0 的日圓金額');
+      if (!amountJpy || amountJpy <= 0) {
+        showToast('⚠️ 請輸入大於 0 的日圓金額');
         return;
       }
 
       if (editingId) {
-        const idx = state.expenses.findIndex(item => item.id === editingId);
-        if (idx > -1) {
-          state.expenses[idx] = {
-            ...state.expenses[idx],
-            category,
-            paymentMethod,
-            amount,
-            note,
-            updatedAt: new Date().toISOString()
-          };
-          showToast('已更新此筆花費紀錄');
+        const idx = appState.expenses.findIndex(item => item.id === editingId);
+        if (idx !== -1) {
+          appState.expenses[idx].category = category;
+          appState.expenses[idx].paymentMethod = paymentMethod;
+          appState.expenses[idx].amountJpy = amountJpy;
+          appState.expenses[idx].note = note;
+          showToast('✅ 已更新此筆花費紀錄');
         }
       } else {
         const newRecord = {
-          id: 'exp-' + Date.now() + '-' + Math.random().toString(36).slice(2, 6),
-          day: state.activeActivityContext.day,
-          activityId: state.activeActivityContext.activityId,
-          activityTitle: state.activeActivityContext.activityTitle,
+          id: 'exp_' + Date.now() + '_' + Math.random().toString(36).slice(2, 6),
+          day: appState.currentActModal.day,
+          activityId: appState.currentActModal.activityId,
+          activityTitle: appState.currentActModal.activityTitle,
           category,
           paymentMethod,
-          amount,
+          amountJpy,
           note,
           createdAt: new Date().toISOString()
         };
-        state.expenses.unshift(newRecord);
-        showToast(`已新增 ${formatJpy(amount)}（${paymentMethod}）`);
+        appState.expenses.unshift(newRecord);
+        showToast('✅ 已儲存至我的記帳本');
       }
 
       saveExpensesToStorage();
       resetActExpenseForm();
       renderActivityModalHistory();
-      renderDayContent(state.selectedDay);
+      renderDaySelectorBar();
+      renderDayContent(appState.selectedDay);
     }
 
-    function editExpenseInsideActivityModal(expenseId) {
-      const target = state.expenses.find(e => e.id === expenseId);
-      if (!target) return;
+    function renderActivityModalHistory() {
+      const listEl = document.getElementById('actModalHistoryList');
+      const subtotalBadge = document.getElementById('actModalSubtotalBadge');
+      const records = getActivityExpenses(appState.currentActModal.activityId);
+      const totalJpy = records.reduce((sum, r) => sum + (Number(r.amountJpy) || 0), 0);
 
-      document.getElementById('actEditingExpenseId').value = target.id;
-      document.getElementById('actFormModeTitle').textContent = '🔧 正在編輯此筆花費';
+      subtotalBadge.textContent = `小計：${formatJpy(totalJpy)}（約 ${formatTwd(totalJpy)}）`;
+
+      if (records.length === 0) {
+        listEl.innerHTML = `
+          <div class="p-4 rounded-2xl bg-parchment/60 border border-dashed border-woodBorder text-center text-xs text-inkMuted">
+            本項行程尚未記錄任何花費，可於上方表單新增。
+          </div>
+        `;
+        return;
+      }
+
+      listEl.innerHTML = records.map(rec => `
+        <div class="p-3 rounded-2xl bg-white border border-woodBorder flex items-center justify-between gap-2">
+          <div class="min-w-0">
+            <div class="flex flex-wrap items-center gap-1.5">
+              <span class="px-2 py-0.5 rounded-md bg-moss/12 text-moss text-[11px] font-bold">
+                ${escapeHtml(rec.category)}
+              </span>
+              <span class="px-2 py-0.5 rounded-md bg-ginkgo/15 text-amber-900 text-[11px] font-bold">
+                💳 ${escapeHtml(rec.paymentMethod || '現金 (JPY)')}
+              </span>
+              <span class="text-sm font-bold text-maple font-mono">
+                ${formatJpy(rec.amountJpy)}
+              </span>
+              <span class="text-[11px] text-inkMuted">
+                (約 ${formatTwd(rec.amountJpy)})
+              </span>
+            </div>
+            ${rec.note ? `<p class="text-xs text-ink mt-1 truncate">備註：${escapeHtml(rec.note)}</p>` : ''}
+          </div>
+          <div class="flex items-center gap-1 shrink-0">
+            <button
+              type="button"
+              onclick="startEditInActivityModal('${escapeHtml(rec.id)}')"
+              class="px-2.5 py-1.5 rounded-xl bg-parchment border border-woodBorder text-xs font-bold text-ink hover:bg-ginkgoLight/50"
+            >
+              編輯
+            </button>
+            <button
+              type="button"
+              onclick="confirmDeleteExpense('${escapeHtml(rec.id)}', true)"
+              class="px-2.5 py-1.5 rounded-xl bg-red-50 border border-red-200 text-xs font-bold text-maple hover:bg-red-100"
+            >
+              刪除
+            </button>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function startEditInActivityModal(expenseId) {
+      const rec = appState.expenses.find(item => item.id === expenseId);
+      if (!rec) return;
+
+      document.getElementById('actEditingExpenseId').value = rec.id;
+      document.getElementById('actFormModeTitle').textContent = '🛠️ 正在編輯此筆花費';
       document.getElementById('actSubmitBtn').textContent = '💾 儲存修改';
       document.getElementById('actCancelEditBtn').classList.remove('hidden');
 
-      populateCategorySelect('actCategorySelect', target.category);
-      populatePaymentSelect('actPaymentSelect', target.paymentMethod || '現金');
-      document.getElementById('actAmountInput').value = target.amount;
-      document.getElementById('actNoteInput').value = target.note || '';
+      if (!appState.categories.includes(rec.category)) {
+        appState.categories.push(rec.category);
+        saveCategoriesToStorage();
+      }
+      const payVal = rec.paymentMethod || '現金 (JPY)';
+      if (!appState.payments.includes(payVal)) {
+        appState.payments.push(payVal);
+        savePaymentsToStorage();
+      }
+
+      populateCategorySelect(document.getElementById('actCategorySelect'), rec.category);
+      populatePaymentSelect(document.getElementById('actPaymentSelect'), payVal);
+      document.getElementById('actAmountInput').value = rec.amountJpy;
+      document.getElementById('actNoteInput').value = rec.note || '';
       document.getElementById('actAmountInput').focus();
     }
 
-    function deleteExpenseInsideActivityModal(expenseId) {
-      const target = state.expenses.find(e => e.id === expenseId);
-      if (!target) return;
-
-      showConfirmModal(
-        '刪除花費紀錄',
-        `確定要刪除這筆「${target.category} · ${formatJpy(target.amount)}」的花費紀錄嗎？`,
+    function confirmDeleteExpense(expenseId, isFromActivityModal = false) {
+      openCustomConfirm(
+        '刪除記帳紀錄',
+        '確定要刪除這筆花費紀錄嗎？刪除後將無法復原。',
         () => {
-          state.expenses = state.expenses.filter(e => e.id !== expenseId);
+          appState.expenses = appState.expenses.filter(item => item.id !== expenseId);
           saveExpensesToStorage();
-          if (document.getElementById('actEditingExpenseId').value === expenseId) {
+          showToast('🗑️ 已刪除此筆花費紀錄');
+
+          if (isFromActivityModal) {
             resetActExpenseForm();
+            renderActivityModalHistory();
           }
-          renderActivityModalHistory();
-          renderDayContent(state.selectedDay);
-          showToast('已刪除此筆花費');
+          renderDaySelectorBar();
+          renderDayContent(appState.selectedDay);
+          if (appState.activeTab === 'expenses') {
+            renderExpensesTab();
+          }
         }
       );
     }
 
-    function renderActivityModalHistory() {
-      if (!state.activeActivityContext) return;
-      const listEl = document.getElementById('actModalHistoryList');
-      const subtotalBadge = document.getElementById('actModalSubtotalBadge');
-
-      const records = state.expenses.filter(
-        e => e.activityId === state.activeActivityContext.activityId
-      );
-
-      const subtotalJpy = records.reduce((s, r) => s + Number(r.amount || 0), 0);
-      subtotalBadge.textContent = `小計：${formatJpy(subtotalJpy)}（約 ${formatTwdFromJpy(subtotalJpy)}）`;
-
-      if (records.length === 0) {
-        listEl.innerHTML = `
-          <div class="p-4 rounded-2xl bg-parchment/70 border border-dashed border-woodBorder text-center text-xs text-inkMuted">
-            本項行程尚未記錄任何花費，歡迎在上方表單新增第一筆！
-          </div>
-        `;
-        return;
-      }
-
-      listEl.innerHTML = records.map(r => {
-        const payMethod = r.paymentMethod || '現金';
-        const payIcon = getPaymentMethodIcon(payMethod);
-        return `
-          <div class="p-3 rounded-2xl bg-white border border-woodBorder flex items-center justify-between gap-2">
-            <div class="min-w-0">
-              <div class="flex flex-wrap items-center gap-1.5">
-                <span class="text-[11px] font-bold px-2 py-0.5 rounded-md bg-moss/12 text-moss">
-                  ${escapeHtml(r.category)}
-                </span>
-                <span class="text-[11px] font-bold px-2 py-0.5 rounded-md bg-ginkgoLight/70 text-amber-950 border border-ginkgo/30">
-                  ${payIcon} ${escapeHtml(payMethod)}
-                </span>
-                <span class="text-sm font-bold text-maple font-mono">
-                  ${formatJpy(r.amount)}
-                </span>
-                <span class="text-[11px] text-inkMuted">
-                  (${formatTwdFromJpy(r.amount)})
-                </span>
-              </div>
-              ${r.note ? `<p class="text-xs text-ink mt-1 truncate">📝 ${escapeHtml(r.note)}</p>` : ''}
-            </div>
-
-            <div class="flex items-center gap-1 shrink-0">
-              <button
-                type="button"
-                onclick="editExpenseInsideActivityModal('${r.id}')"
-                class="px-2.5 py-1.5 rounded-xl bg-parchment hover:bg-ginkgoLight/60 border border-woodBorder text-xs font-bold text-ink active:scale-95 transition"
-              >
-                編輯
-              </button>
-              <button
-                type="button"
-                onclick="deleteExpenseInsideActivityModal('${r.id}')"
-                class="px-2.5 py-1.5 rounded-xl bg-red-50 hover:bg-red-100 border border-maple/25 text-xs font-bold text-maple active:scale-95 transition"
-              >
-                刪除
-              </button>
-            </div>
-          </div>
-        `;
-      }).join('');
+    /* ==========================================================================
+       九、我的記帳本總覽、付款方式統計管理、類別管理、CSV/JSON 備份還原
+       ========================================================================== */
+    function renderExpensesTab() {
+      updateRateUI();
+      renderPaymentStatsGrid();
+      renderCategoryFilterBar();
+      renderPaymentManagerList();
+      renderCategoryManagerList();
+      renderGlobalExpenseList();
     }
 
-    /* ==========================================================================
-       八、我的記帳本總表分頁（雙維度篩選、付款方式雙幣統計、編刪、CSV/JSON 匯出匯入）
-       ========================================================================== */
-    function renderExpensesDashboard() {
-      updateRateUI();
+    function getFilteredExpenses() {
+      return appState.expenses.filter(item => {
+        const matchCat = appState.selectedFilterCategory === '全部' || item.category === appState.selectedFilterCategory;
+        const itemPay = item.paymentMethod || '現金 (JPY)';
+        const matchPay = appState.selectedFilterPayment === '全部' || itemPay === appState.selectedFilterPayment;
+        return matchCat && matchPay;
+      });
+    }
 
-      // 1. 計算與渲染「依付款方式篩選與統計（日幣＆台幣）」
-      // 若目前有選特定類別，付款方式小計會反映該類別下的各付款方式分布；若類別為 ALL，則反映全行程各付款方式總計
-      const categoryScopedExpenses = state.selectedExpenseCategoryFilter === 'ALL'
-        ? state.expenses
-        : state.expenses.filter(e => e.category === state.selectedExpenseCategoryFilter);
+    function renderPaymentStatsGrid() {
+      const grid = document.getElementById('paymentStatsGrid');
+      if (!grid) return;
 
-      const allScopedJpy = categoryScopedExpenses.reduce((s, r) => s + Number(r.amount || 0), 0);
-      const paymentStatsGrid = document.getElementById('paymentStatsGrid');
-      if (paymentStatsGrid) {
-        const allCardSelected = state.selectedExpensePaymentFilter === 'ALL';
-        const allCardHtml = `
+      // 依「目前所選類別」計算各付款方式的小計（日圓 & 台幣）
+      const catFiltered = appState.selectedFilterCategory === '全部'
+        ? appState.expenses
+        : appState.expenses.filter(e => e.category === appState.selectedFilterCategory);
+
+      const totalAllJpy = catFiltered.reduce((s, e) => s + (Number(e.amountJpy) || 0), 0);
+
+      // 收集所有出現在列表與歷史帳目中的付款方式
+      const allPayments = [...appState.payments];
+      catFiltered.forEach(e => {
+        const p = e.paymentMethod || '現金 (JPY)';
+        if (!allPayments.includes(p)) allPayments.push(p);
+      });
+
+      const isAllSelected = appState.selectedFilterPayment === '全部';
+      let cardsHtml = `
+        <button
+          type="button"
+          onclick="setExpensePaymentFilter('全部')"
+          class="p-3 rounded-2xl border text-left transition active:scale-[0.98] ${
+            isAllSelected
+              ? 'bg-moss text-white border-moss shadow-sm'
+              : 'bg-parchment/85 text-ink border-woodBorder hover:bg-ginkgoLight/40'
+          }"
+        >
+          <div class="flex items-center justify-between gap-1 text-[11px] font-bold">
+            <span class="truncate">🌐 全部付款方式</span>
+            <span class="${isAllSelected ? 'text-white/90' : 'text-inkMuted'}">${catFiltered.length} 筆</span>
+          </div>
+          <p class="text-sm sm:text-base font-bold font-mono mt-1 ${isAllSelected ? 'text-white' : 'text-maple'}">
+            ${formatJpy(totalAllJpy)}
+          </p>
+          <p class="text-[11px] font-mono ${isAllSelected ? 'text-white/85' : 'text-inkMuted'}">
+            約 ${formatTwd(totalAllJpy)}
+          </p>
+        </button>
+      `;
+
+      allPayments.forEach(pay => {
+        const subItems = catFiltered.filter(e => (e.paymentMethod || '現金 (JPY)') === pay);
+        const subJpy = subItems.reduce((s, e) => s + (Number(e.amountJpy) || 0), 0);
+        const active = appState.selectedFilterPayment === pay;
+
+        cardsHtml += `
           <button
             type="button"
-            onclick="setExpensePaymentFilter('ALL')"
-            class="p-2.5 rounded-2xl border text-left transition active:scale-[0.98] ${
-              allCardSelected
-                ? 'bg-moss text-white border-moss shadow-xs'
-                : 'bg-parchment/80 text-ink border-woodBorder hover:bg-mossLight/40'
+            onclick="setExpensePaymentFilter('${escapeHtml(pay)}')"
+            class="p-3 rounded-2xl border text-left transition active:scale-[0.98] ${
+              active
+                ? 'bg-moss text-white border-moss shadow-sm'
+                : 'bg-parchment/85 text-ink border-woodBorder hover:bg-ginkgoLight/40'
             }"
           >
-            <div class="flex items-center justify-between gap-1">
-              <span class="text-xs font-bold">🌐 全部付款方式</span>
-              <span class="text-[10px] px-1.5 py-0.2 rounded-full ${allCardSelected ? 'bg-white/20 text-white' : 'bg-woodBorder/60 text-inkMuted'}">
-                ${categoryScopedExpenses.length} 筆
-              </span>
+            <div class="flex items-center justify-between gap-1 text-[11px] font-bold">
+              <span class="truncate">💳 ${escapeHtml(pay)}</span>
+              <span class="shrink-0 ${active ? 'text-white/90' : 'text-inkMuted'}">${subItems.length} 筆</span>
             </div>
-            <p class="text-sm font-bold font-mono mt-1 ${allCardSelected ? 'text-white' : 'text-maple'}">
-              ${formatJpy(allScopedJpy)}
+            <p class="text-sm sm:text-base font-bold font-mono mt-1 ${active ? 'text-white' : 'text-maple'}">
+              ${formatJpy(subJpy)}
             </p>
-            <p class="text-[11px] ${allCardSelected ? 'text-white/90' : 'text-inkMuted'}">
-              ≈ ${formatTwdFromJpy(allScopedJpy)}
+            <p class="text-[11px] font-mono ${active ? 'text-white/85' : 'text-inkMuted'}">
+              約 ${formatTwd(subJpy)}
             </p>
           </button>
         `;
+      });
 
-        const perPayCardsHtml = state.paymentMethods.map(pay => {
-          const matched = categoryScopedExpenses.filter(e => (e.paymentMethod || '現金') === pay);
-          const sumJpy = matched.reduce((s, r) => s + Number(r.amount || 0), 0);
-          const isSelected = state.selectedExpensePaymentFilter === pay;
-          const icon = getPaymentMethodIcon(pay);
+      grid.innerHTML = cardsHtml;
+    }
 
-          return `
-            <button
-              type="button"
-              onclick="setExpensePaymentFilter('${escapeAttr(pay)}')"
-              class="p-2.5 rounded-2xl border text-left transition active:scale-[0.98] ${
-                isSelected
-                  ? 'bg-moss text-white border-moss shadow-xs'
-                  : 'bg-parchment/80 text-ink border-woodBorder hover:bg-mossLight/40'
-              }"
-            >
-              <div class="flex items-center justify-between gap-1">
-                <span class="text-xs font-bold truncate">${icon} ${escapeHtml(pay)}</span>
-                <span class="text-[10px] px-1.5 py-0.2 rounded-full shrink-0 ${isSelected ? 'bg-white/20 text-white' : 'bg-woodBorder/60 text-inkMuted'}">
-                  ${matched.length} 筆
-                </span>
-              </div>
-              <p class="text-sm font-bold font-mono mt-1 ${isSelected ? 'text-white' : 'text-ink'}">
-                ${formatJpy(sumJpy)}
-              </p>
-              <p class="text-[11px] ${isSelected ? 'text-white/90' : 'text-inkMuted'}">
-                ≈ ${formatTwdFromJpy(sumJpy)}
-              </p>
-            </button>
-          `;
-        }).join('');
+    function setExpensePaymentFilter(pay) {
+      appState.selectedFilterPayment = pay;
+      renderPaymentStatsGrid();
+      renderGlobalExpenseList();
+    }
 
-        paymentStatsGrid.innerHTML = allCardHtml + perPayCardsHtml;
-      }
+    function renderCategoryFilterBar() {
+      const bar = document.getElementById('categoryFilterBar');
+      const allFilters = ['全部', ...appState.categories];
 
-      // 2. 渲染類別篩選膠囊列（受目前付款方式篩選之筆數參考或總筆數顯示）
-      const paymentScopedExpenses = state.selectedExpensePaymentFilter === 'ALL'
-        ? state.expenses
-        : state.expenses.filter(e => (e.paymentMethod || '現金') === state.selectedExpensePaymentFilter);
+      bar.innerHTML = allFilters.map(cat => {
+        const isActive = appState.selectedFilterCategory === cat;
+        const count = cat === '全部'
+          ? appState.expenses.length
+          : appState.expenses.filter(e => e.category === cat).length;
 
-      const filterBar = document.getElementById('categoryFilterBar');
-      const allCats = ['ALL', ...state.categories];
-      filterBar.innerHTML = allCats.map(cat => {
-        const isSelected = state.selectedExpenseCategoryFilter === cat;
-        const count = cat === 'ALL'
-          ? paymentScopedExpenses.length
-          : paymentScopedExpenses.filter(e => e.category === cat).length;
-        const label = cat === 'ALL' ? `全部類別 (${count})` : `${cat} (${count})`;
-        const cls = isSelected
-          ? 'bg-maple text-white border-maple shadow-xs'
-          : 'bg-parchment text-ink border-woodBorder hover:bg-ginkgoLight/40';
         return `
           <button
             type="button"
-            onclick="setExpenseCategoryFilter('${escapeAttr(cat)}')"
-            class="shrink-0 px-3 py-1.5 rounded-xl border text-xs font-bold transition active:scale-95 ${cls}"
+            onclick="setExpenseCategoryFilter('${escapeHtml(cat)}')"
+            class="shrink-0 px-3 py-1.5 rounded-xl text-xs font-bold border transition active:scale-95 ${
+              isActive
+                ? 'bg-maple text-white border-maple shadow-sm'
+                : 'bg-parchment text-ink border-woodBorder hover:bg-ginkgoLight/40'
+            }"
           >
-            ${escapeHtml(label)}
+            ${escapeHtml(cat)} (${count})
           </button>
-        `;
-      }).join('');
-
-      // 3. 篩選帳目並更新上方雙幣總金額儀表板
-      const filtered = state.expenses.filter(e => {
-        const catOk = state.selectedExpenseCategoryFilter === 'ALL' || e.category === state.selectedExpenseCategoryFilter;
-        const payOk = state.selectedExpensePaymentFilter === 'ALL' || (e.paymentMethod || '現金') === state.selectedExpensePaymentFilter;
-        return catOk && payOk;
-      });
-
-      const totalJpy = filtered.reduce((sum, item) => sum + Number(item.amount || 0), 0);
-      const catDesc = state.selectedExpenseCategoryFilter === 'ALL' ? '全部類別' : `類別「${state.selectedExpenseCategoryFilter}」`;
-      const payDesc = state.selectedExpensePaymentFilter === 'ALL' ? '全部付款方式' : `付款「${state.selectedExpensePaymentFilter}」`;
-
-      document.getElementById('summaryFilterLabel').textContent = `${catDesc} · ${payDesc}`;
-      document.getElementById('summaryCountBadge').textContent = `${filtered.length} 筆`;
-      document.getElementById('summaryTotalJpy').textContent = formatJpy(totalJpy);
-      document.getElementById('summaryTotalTwd').textContent = formatTwdFromJpy(totalJpy);
-
-      // 4. 渲染明細清單（含付款方式標籤）
-      const listContainer = document.getElementById('globalExpenseListContainer');
-      if (filtered.length === 0) {
-        listContainer.innerHTML = `
-          <div class="p-8 rounded-2xl bg-parchment/70 border border-dashed border-woodBorder text-center space-y-2">
-            <p class="text-2xl">🍂</p>
-            <p class="text-sm font-bold text-ink">目前尚無符合條件的記帳明細</p>
-            <p class="text-xs text-inkMuted">可前往「每日行程」點擊任一活動卡片上的「＋記一筆」，或點擊上方「＋ 自由記一筆」新增花費。</p>
-          </div>
-        `;
-        return;
-      }
-
-      // 依 Day 升冪、建立時間降冪排序
-      const sorted = [...filtered].sort((a, b) => {
-        if (a.day !== b.day) return a.day - b.day;
-        return (b.createdAt || '').localeCompare(a.createdAt || '');
-      });
-
-      listContainer.innerHTML = sorted.map(r => {
-        const payMethod = r.paymentMethod || '現金';
-        const payIcon = getPaymentMethodIcon(payMethod);
-        return `
-          <div class="p-3.5 rounded-2xl bg-parchment/75 border border-woodBorder flex flex-col sm:flex-row sm:items-center justify-between gap-2.5">
-            <div class="space-y-1 min-w-0">
-              <div class="flex flex-wrap items-center gap-1.5">
-                <span class="px-2 py-0.5 rounded-lg bg-maple text-white text-[11px] font-bold">
-                  Day ${r.day}
-                </span>
-                <span class="px-2 py-0.5 rounded-lg bg-moss/15 text-moss text-[11px] font-bold">
-                  ${escapeHtml(r.category)}
-                </span>
-                <span class="px-2 py-0.5 rounded-lg bg-ginkgoLight/80 text-amber-950 border border-ginkgo/35 text-[11px] font-bold">
-                  ${payIcon} ${escapeHtml(payMethod)}
-                </span>
-                <span class="text-xs sm:text-sm font-bold text-ink truncate">
-                  ${escapeHtml(r.activityTitle)}
-                </span>
-              </div>
-              ${r.note ? `<p class="text-xs text-inkMuted">📝 ${escapeHtml(r.note)}</p>` : ''}
-            </div>
-
-            <div class="flex items-center justify-between sm:justify-end gap-3 pt-2 sm:pt-0 border-t sm:border-t-0 border-woodBorder/70 shrink-0">
-              <div class="text-left sm:text-right">
-                <p class="text-sm sm:text-base font-bold text-maple font-mono">${formatJpy(r.amount)}</p>
-                <p class="text-[11px] text-inkMuted">≈ ${formatTwdFromJpy(r.amount)}</p>
-              </div>
-              <div class="flex items-center gap-1.5">
-                <button
-                  type="button"
-                  onclick="openGlobalEditExpenseModal('${r.id}')"
-                  class="px-3 py-1.5 rounded-xl bg-white hover:bg-ginkgoLight/60 border border-woodBorder text-xs font-bold text-ink active:scale-95 transition"
-                >
-                  編輯
-                </button>
-                <button
-                  type="button"
-                  onclick="deleteExpenseFromGlobal('${r.id}')"
-                  class="px-3 py-1.5 rounded-xl bg-red-50 hover:bg-red-100 border border-maple/25 text-xs font-bold text-maple active:scale-95 transition"
-                >
-                  刪除
-                </button>
-              </div>
-            </div>
-          </div>
         `;
       }).join('');
     }
 
     function setExpenseCategoryFilter(cat) {
-      state.selectedExpenseCategoryFilter = cat;
-      renderExpensesDashboard();
+      appState.selectedFilterCategory = cat;
+      renderCategoryFilterBar();
+      renderPaymentStatsGrid();
+      renderGlobalExpenseList();
     }
 
-    function setExpensePaymentFilter(pay) {
-      if (state.selectedExpensePaymentFilter === pay && pay !== 'ALL') {
-        state.selectedExpensePaymentFilter = 'ALL';
-      } else {
-        state.selectedExpensePaymentFilter = pay;
+    function renderGlobalExpenseList() {
+      const listContainer = document.getElementById('globalExpenseListContainer');
+      const filtered = getFilteredExpenses();
+
+      const totalJpy = filtered.reduce((sum, item) => sum + (Number(item.amountJpy) || 0), 0);
+      document.getElementById('summaryFilterLabel').textContent =
+        `類別：${appState.selectedFilterCategory} ｜ 付款：${appState.selectedFilterPayment}`;
+      document.getElementById('summaryCountBadge').textContent = `${filtered.length} 筆`;
+      document.getElementById('summaryTotalJpy').textContent = formatJpy(totalJpy);
+      document.getElementById('summaryTotalTwd').textContent = formatTwd(totalJpy);
+
+      if (filtered.length === 0) {
+        listContainer.innerHTML = `
+          <div class="p-6 rounded-2xl bg-parchment/70 border border-dashed border-woodBorder text-center space-y-2">
+            <p class="text-sm font-bold text-ink">目前篩選條件下尚無記帳紀錄</p>
+            <p class="text-xs text-inkMuted">可調整上方類別或付款方式篩選，或至「每日行程」與「＋自由記一筆」新增花費。</p>
+          </div>
+        `;
+        return;
       }
-      renderExpensesDashboard();
-    }
 
-    // 類別管理面板開關與渲染
-    function toggleCategoryManager() {
-      const panel = document.getElementById('categoryManagerPanel');
-      panel.classList.toggle('hidden');
-      if (!panel.classList.contains('hidden')) {
-        renderCategoryManager();
-      }
-    }
+      const sorted = [...filtered].sort((a, b) => Number(a.day) - Number(b.day));
 
-    function handleAddCategoryFromManager() {
-      const input = document.getElementById('newCategoryManagerInput');
-      const added = addCustomCategory(input.value);
-      if (added) {
-        input.value = '';
-        renderCategoryManager();
-        renderExpensesDashboard();
-        showToast(`已新增類別「${added}」`);
-      }
-    }
-
-    function renderCategoryManager() {
-      const list = document.getElementById('categoryManagerList');
-      if (!list) return;
-
-      list.innerHTML = state.categories.map((cat, idx) => {
-        const isFallback = cat === FALLBACK_CATEGORY;
-        const count = state.expenses.filter(e => e.category === cat).length;
-
-        if (isFallback) {
-          return `
-            <div class="p-2.5 rounded-xl bg-parchment border border-woodBorder flex items-center justify-between text-xs">
-              <div>
-                <span class="font-bold text-ink">${escapeHtml(cat)}</span>
-                <span class="text-[11px] text-inkMuted ml-1">(${count} 筆 · 系統保底類別)</span>
-              </div>
-              <span class="text-[11px] text-inkMuted px-2 py-0.5 rounded bg-woodBorder/40">不可刪改</span>
+      listContainer.innerHTML = sorted.map(rec => `
+        <div class="p-3.5 rounded-2xl bg-parchment/75 border border-woodBorder flex flex-col sm:flex-row sm:items-center justify-between gap-2.5">
+          <div class="min-w-0 space-y-1">
+            <div class="flex flex-wrap items-center gap-1.5">
+              <span class="px-2 py-0.5 rounded-lg bg-maple text-white text-[11px] font-bold">
+                Day ${rec.day}
+              </span>
+              <span class="px-2 py-0.5 rounded-lg bg-moss/15 text-moss text-[11px] font-bold">
+                ${escapeHtml(rec.category)}
+              </span>
+              <span class="px-2 py-0.5 rounded-lg bg-ginkgo/20 text-amber-950 text-[11px] font-bold">
+                💳 ${escapeHtml(rec.paymentMethod || '現金 (JPY)')}
+              </span>
+              <span class="text-xs sm:text-sm font-bold text-ink truncate">
+                ${escapeHtml(rec.activityTitle)}
+              </span>
             </div>
-          `;
-        }
+            ${rec.note ? `<p class="text-xs text-inkMuted pl-0.5">📝 備註：${escapeHtml(rec.note)}</p>` : ''}
+          </div>
 
-        return `
-          <div class="p-2.5 rounded-xl bg-white border border-woodBorder flex items-center justify-between gap-2 text-xs">
-            <div class="flex items-center gap-1.5 min-w-0 flex-1">
-              <input
-                id="catRenameInput-${idx}"
-                type="text"
-                maxlength="16"
-                value="${escapeAttr(cat)}"
-                class="w-full px-2 py-1 rounded-lg bg-parchment border border-woodBorder font-bold text-ink focus:outline-none focus:border-moss"
-              />
-              <span class="text-[11px] text-inkMuted shrink-0">(${count}筆)</span>
+          <div class="flex items-center justify-between sm:justify-end gap-3 pt-2 sm:pt-0 border-t sm:border-t-0 border-woodBorder/60 shrink-0">
+            <div class="text-left sm:text-right">
+              <p class="text-sm sm:text-base font-bold text-maple font-mono">${formatJpy(rec.amountJpy)}</p>
+              <p class="text-[11px] text-inkMuted font-mono">約 ${formatTwd(rec.amountJpy)}</p>
             </div>
-            <div class="flex items-center gap-1 shrink-0">
+            <div class="flex items-center gap-1.5">
               <button
                 type="button"
-                onclick="renameCategory('${escapeAttr(cat)}', document.getElementById('catRenameInput-${idx}').value)"
-                class="px-2.5 py-1 rounded-lg bg-moss/15 text-moss font-bold hover:bg-moss hover:text-white transition"
+                onclick="openGlobalEditExpenseModal('${escapeHtml(rec.id)}')"
+                class="px-3 py-1.5 rounded-xl bg-white border border-woodBorder text-xs font-bold text-ink hover:bg-ginkgoLight/50 active:scale-95 transition"
               >
-                更名
+                編輯
               </button>
               <button
                 type="button"
-                onclick="requestDeleteCategory('${escapeAttr(cat)}')"
-                class="px-2.5 py-1 rounded-lg bg-red-50 text-maple font-bold hover:bg-maple hover:text-white transition"
+                onclick="confirmDeleteExpense('${escapeHtml(rec.id)}', false)"
+                class="px-3 py-1.5 rounded-xl bg-red-50 border border-red-200 text-xs font-bold text-maple hover:bg-red-100 active:scale-95 transition"
               >
                 刪除
               </button>
             </div>
           </div>
-        `;
-      }).join('');
+        </div>
+      `).join('');
     }
 
-    // 付款方式管理面板開關與渲染
-    function togglePaymentManager() {
-      const panel = document.getElementById('paymentManagerPanel');
-      panel.classList.toggle('hidden');
-      if (!panel.classList.contains('hidden')) {
-        renderPaymentManager();
-      }
-    }
-
-    function handleAddPaymentFromManager() {
-      const input = document.getElementById('newPaymentManagerInput');
-      const added = addCustomPaymentMethod(input.value);
-      if (added) {
-        input.value = '';
-        renderPaymentManager();
-        renderExpensesDashboard();
-        showToast(`已新增付款方式「${added}」`);
-      }
-    }
-
-    function renderPaymentManager() {
-      const list = document.getElementById('paymentManagerList');
-      if (!list) return;
-
-      list.innerHTML = state.paymentMethods.map((pay, idx) => {
-        const isFallback = pay === FALLBACK_PAYMENT_METHOD;
-        const count = state.expenses.filter(e => (e.paymentMethod || '現金') === pay).length;
-
-        if (isFallback) {
-          return `
-            <div class="p-2.5 rounded-xl bg-parchment border border-woodBorder flex items-center justify-between text-xs">
-              <div>
-                <span class="font-bold text-ink">${escapeHtml(pay)}</span>
-                <span class="text-[11px] text-inkMuted ml-1">(${count} 筆 · 系統保底付款方式)</span>
-              </div>
-              <span class="text-[11px] text-inkMuted px-2 py-0.5 rounded bg-woodBorder/40">不可刪改</span>
-            </div>
-          `;
-        }
-
-        return `
-          <div class="p-2.5 rounded-xl bg-white border border-woodBorder flex items-center justify-between gap-2 text-xs">
-            <div class="flex items-center gap-1.5 min-w-0 flex-1">
-              <input
-                id="payRenameInput-${idx}"
-                type="text"
-                maxlength="16"
-                value="${escapeAttr(pay)}"
-                class="w-full px-2 py-1 rounded-lg bg-parchment border border-woodBorder font-bold text-ink focus:outline-none focus:border-moss"
-              />
-              <span class="text-[11px] text-inkMuted shrink-0">(${count}筆)</span>
-            </div>
-            <div class="flex items-center gap-1 shrink-0">
-              <button
-                type="button"
-                onclick="renamePaymentMethod('${escapeAttr(pay)}', document.getElementById('payRenameInput-${idx}').value)"
-                class="px-2.5 py-1 rounded-lg bg-moss/15 text-moss font-bold hover:bg-moss hover:text-white transition"
-              >
-                更名
-              </button>
-              <button
-                type="button"
-                onclick="requestDeletePaymentMethod('${escapeAttr(pay)}')"
-                class="px-2.5 py-1 rounded-lg bg-red-50 text-maple font-bold hover:bg-maple hover:text-white transition"
-              >
-                刪除
-              </button>
-            </div>
-          </div>
-        `;
-      }).join('');
-    }
-
-    // 總表彈窗：新增／編輯
-    function populateGlobalDaySelect(selectedDay) {
-      const sel = document.getElementById('globalDaySelect');
-      if (!sel) return;
-      sel.innerHTML = itineraryData.map(d => `
-        <option value="${d.day}" ${d.day === selectedDay ? 'selected' : ''}>
+    /* ---------------- 總表新增與編輯彈窗 ---------------- */
+    function populateGlobalDaySelect(selectedDayVal) {
+      const daySel = document.getElementById('globalDaySelect');
+      daySel.innerHTML = itineraryData.map(d => `
+        <option value="${d.day}" ${Number(d.day) === Number(selectedDayVal) ? 'selected' : ''}>
           Day ${d.day} (${d.date.slice(5)})
         </option>
       `).join('');
@@ -5862,15 +5326,16 @@
     function openGlobalAddExpenseModal() {
       document.getElementById('globalModalTitle').textContent = '＋ 自由記一筆花費';
       document.getElementById('globalEditingId').value = '';
-      document.getElementById('globalEditingActivityId').value = 'custom-' + Date.now();
-      populateGlobalDaySelect(state.selectedDay);
+      document.getElementById('globalEditingActivityId').value = 'custom_free';
+      populateGlobalDaySelect(appState.selectedDay || 1);
       document.getElementById('globalActivityTitleInput').value = '';
-      populateCategorySelect('globalCategorySelect', state.categories[0] || FALLBACK_CATEGORY);
-      populatePaymentSelect('globalPaymentSelect', '現金');
       document.getElementById('globalAmountInput').value = '';
       document.getElementById('globalNoteInput').value = '';
       document.getElementById('globalInlineNewCatBox').classList.add('hidden');
       document.getElementById('globalInlineNewPayBox').classList.add('hidden');
+
+      populateCategorySelect(document.getElementById('globalCategorySelect'), appState.categories[0] || '餐飲');
+      populatePaymentSelect(document.getElementById('globalPaymentSelect'), appState.payments[0] || '現金 (JPY)');
 
       const modal = document.getElementById('globalExpenseModal');
       modal.classList.remove('hidden');
@@ -5878,20 +5343,31 @@
     }
 
     function openGlobalEditExpenseModal(expenseId) {
-      const target = state.expenses.find(e => e.id === expenseId);
-      if (!target) return;
+      const rec = appState.expenses.find(item => item.id === expenseId);
+      if (!rec) return;
 
-      document.getElementById('globalModalTitle').textContent = '🔧 編輯記帳紀錄';
-      document.getElementById('globalEditingId').value = target.id;
-      document.getElementById('globalEditingActivityId').value = target.activityId;
-      populateGlobalDaySelect(target.day);
-      document.getElementById('globalActivityTitleInput').value = target.activityTitle;
-      populateCategorySelect('globalCategorySelect', target.category);
-      populatePaymentSelect('globalPaymentSelect', target.paymentMethod || '現金');
-      document.getElementById('globalAmountInput').value = target.amount;
-      document.getElementById('globalNoteInput').value = target.note || '';
+      document.getElementById('globalModalTitle').textContent = '🛠️ 編輯記帳紀錄';
+      document.getElementById('globalEditingId').value = rec.id;
+      document.getElementById('globalEditingActivityId').value = rec.activityId || 'custom_free';
+      populateGlobalDaySelect(rec.day);
+      document.getElementById('globalActivityTitleInput').value = rec.activityTitle;
+      document.getElementById('globalAmountInput').value = rec.amountJpy;
+      document.getElementById('globalNoteInput').value = rec.note || '';
       document.getElementById('globalInlineNewCatBox').classList.add('hidden');
       document.getElementById('globalInlineNewPayBox').classList.add('hidden');
+
+      if (!appState.categories.includes(rec.category)) {
+        appState.categories.push(rec.category);
+        saveCategoriesToStorage();
+      }
+      const payVal = rec.paymentMethod || '現金 (JPY)';
+      if (!appState.payments.includes(payVal)) {
+        appState.payments.push(payVal);
+        savePaymentsToStorage();
+      }
+
+      populateCategorySelect(document.getElementById('globalCategorySelect'), rec.category);
+      populatePaymentSelect(document.getElementById('globalPaymentSelect'), payVal);
 
       const modal = document.getElementById('globalExpenseModal');
       modal.classList.remove('hidden');
@@ -5907,117 +5383,363 @@
     function handleSaveGlobalExpense(e) {
       e.preventDefault();
       const editingId = document.getElementById('globalEditingId').value;
-      const activityId = document.getElementById('globalEditingActivityId').value || ('custom-' + Date.now());
-      const day = Number(document.getElementById('globalDaySelect').value) || 1;
+      const day = Number(document.getElementById('globalDaySelect').value);
       const activityTitle = document.getElementById('globalActivityTitleInput').value.trim();
-      const category = document.getElementById('globalCategorySelect').value || FALLBACK_CATEGORY;
-      const paymentMethod = document.getElementById('globalPaymentSelect').value || '現金';
-      const amount = Math.round(Number(document.getElementById('globalAmountInput').value));
+      const category = document.getElementById('globalCategorySelect').value;
+      const paymentMethod = document.getElementById('globalPaymentSelect').value || '現金 (JPY)';
+      const amountJpy = Math.round(Number(document.getElementById('globalAmountInput').value));
       const note = document.getElementById('globalNoteInput').value.trim();
 
-      if (!activityTitle || isNaN(amount) || amount <= 0) {
-        showToast('請完整填寫項目名稱與大於 0 的日圓金額');
+      if (!activityTitle || !amountJpy || amountJpy <= 0) {
+        showToast('⚠️ 請完整填寫項目名稱與有效日圓金額');
         return;
       }
 
       if (editingId) {
-        const idx = state.expenses.findIndex(item => item.id === editingId);
-        if (idx > -1) {
-          state.expenses[idx] = {
-            ...state.expenses[idx],
+        const idx = appState.expenses.findIndex(item => item.id === editingId);
+        if (idx !== -1) {
+          appState.expenses[idx] = {
+            ...appState.expenses[idx],
             day,
             activityTitle,
             category,
             paymentMethod,
-            amount,
-            note,
-            updatedAt: new Date().toISOString()
+            amountJpy,
+            note
           };
-          showToast('已更新記帳明細');
+          showToast('✅ 已儲存帳目變更');
         }
       } else {
-        state.expenses.unshift({
-          id: 'exp-' + Date.now() + '-' + Math.random().toString(36).slice(2, 6),
+        appState.expenses.unshift({
+          id: 'exp_' + Date.now() + '_' + Math.random().toString(36).slice(2, 6),
           day,
-          activityId,
+          activityId: 'custom_free',
           activityTitle,
           category,
           paymentMethod,
-          amount,
+          amountJpy,
           note,
           createdAt: new Date().toISOString()
         });
-        showToast(`已新增 ${formatJpy(amount)}（${paymentMethod}）`);
+        showToast('✅ 已新增一筆自由記帳');
       }
 
       saveExpensesToStorage();
       closeGlobalExpenseModal();
-      renderExpensesDashboard();
-      renderDayContent(state.selectedDay);
+      renderExpensesTab();
+      renderDaySelectorBar();
+      renderDayContent(appState.selectedDay);
     }
 
-    function deleteExpenseFromGlobal(expenseId) {
-      const target = state.expenses.find(e => e.id === expenseId);
-      if (!target) return;
-
-      showConfirmModal(
-        '刪除記帳明細',
-        `確定要刪除 Day ${target.day}「${target.activityTitle}」（${formatJpy(target.amount)} · ${target.paymentMethod || '現金'}）嗎？`,
-        () => {
-          state.expenses = state.expenses.filter(e => e.id !== expenseId);
-          saveExpensesToStorage();
-          renderExpensesDashboard();
-          renderDayContent(state.selectedDay);
-          showToast('已刪除該筆帳目');
-        }
-      );
+    /* ---------------- 付款方式自由管理（新增、編輯重新命名、刪除安全歸類） ---------------- */
+    function togglePaymentManager() {
+      const panel = document.getElementById('paymentManagerPanel');
+      panel.classList.toggle('hidden');
+      if (!panel.classList.contains('hidden')) {
+        renderPaymentManagerList();
+      }
     }
 
-    // 匯出 CSV / JSON 與 匯入 JSON 備份還原（完整支援「付款方式」欄位）
-    function exportExpensesCSV() {
-      if (state.expenses.length === 0) {
-        showToast('目前尚無記帳資料可匯出');
+    function renderPaymentManagerList() {
+      const container = document.getElementById('paymentManagerList');
+      if (!container) return;
+
+      container.innerHTML = appState.payments.map(pay => {
+        const isProtectedOther = pay === '其他';
+        const usedCount = appState.expenses.filter(e => (e.paymentMethod || '現金 (JPY)') === pay).length;
+
+        return `
+          <div class="p-2.5 rounded-xl bg-parchment border border-woodBorder flex items-center justify-between gap-2">
+            <div class="min-w-0">
+              <span class="text-xs sm:text-sm font-bold text-ink truncate block">💳 ${escapeHtml(pay)}</span>
+              <span class="text-[11px] text-inkMuted">關聯 ${usedCount} 筆帳目</span>
+            </div>
+            ${isProtectedOther ? `
+              <span class="text-[11px] px-2 py-0.5 rounded bg-woodBorder/60 text-inkMuted shrink-0">系統保留</span>
+            ` : `
+              <div class="flex items-center gap-1 shrink-0">
+                <button
+                  type="button"
+                  onclick="promptRenamePayment('${escapeHtml(pay)}')"
+                  class="px-2 py-1 rounded-lg bg-white border border-woodBorder text-[11px] font-bold text-ink hover:bg-ginkgoLight/50"
+                >
+                  重命名
+                </button>
+                <button
+                  type="button"
+                  onclick="confirmDeletePayment('${escapeHtml(pay)}')"
+                  class="px-2 py-1 rounded-lg bg-red-50 border border-red-200 text-[11px] font-bold text-maple hover:bg-red-100"
+                >
+                  刪除
+                </button>
+              </div>
+            `}
+          </div>
+        `;
+      }).join('');
+    }
+
+    function handleAddPaymentFromManager() {
+      const input = document.getElementById('newPaymentManagerInput');
+      const name = input.value.trim();
+      if (!name) {
+        showToast('⚠️ 請輸入付款方式名稱');
         return;
       }
-      const headers = ['天數', '日期', '行程項目', '花費類別', '付款方式', '日圓金額(JPY)', '估算台幣(TWD)', '備註'];
-      const rows = [...state.expenses]
-        .sort((a, b) => a.day - b.day)
-        .map(r => {
-          const dayObj = itineraryData.find(d => d.day === r.day);
-          const dateStr = dayObj ? dayObj.date : '';
-          const twd = Math.round(Number(r.amount || 0) * state.exchangeRate);
-          const payMethod = r.paymentMethod || '現金';
-          return [
-            `Day ${r.day}`,
-            dateStr,
-            `"${(r.activityTitle || '').replace(/"/g, '""')}"`,
-            `"${(r.category || '').replace(/"/g, '""')}"`,
-            `"${payMethod.replace(/"/g, '""')}"`,
-            r.amount,
-            twd,
-            `"${(r.note || '').replace(/"/g, '""')}"`
-          ].join(',');
+      if (appState.payments.includes(name)) {
+        showToast('⚠️ 此付款方式已經存在');
+        return;
+      }
+      appState.payments.push(name);
+      savePaymentsToStorage();
+      input.value = '';
+      renderPaymentManagerList();
+      renderPaymentStatsGrid();
+      showToast(`💳 已新增付款方式「${name}」`);
+    }
+
+    function promptRenamePayment(oldName) {
+      const newName = window.prompt(`請輸入「${oldName}」的新付款方式名稱：`, oldName);
+      if (newName === null) return;
+      const trimmed = newName.trim();
+      if (!trimmed || trimmed === oldName) return;
+      if (appState.payments.includes(trimmed)) {
+        showToast('⚠️ 此付款方式名稱已存在，請使用其他名稱');
+        return;
+      }
+
+      const idx = appState.payments.indexOf(oldName);
+      if (idx !== -1) appState.payments[idx] = trimmed;
+
+      appState.expenses.forEach(item => {
+        if ((item.paymentMethod || '現金 (JPY)') === oldName) {
+          item.paymentMethod = trimmed;
+        }
+      });
+
+      if (appState.selectedFilterPayment === oldName) {
+        appState.selectedFilterPayment = trimmed;
+      }
+
+      savePaymentsToStorage();
+      saveExpensesToStorage();
+      renderExpensesTab();
+      showToast(`✅ 已將「${oldName}」重新命名為「${trimmed}」`);
+    }
+
+    function confirmDeletePayment(payName) {
+      if (payName === '其他') return;
+      const count = appState.expenses.filter(e => (e.paymentMethod || '現金 (JPY)') === payName).length;
+      const desc = count > 0
+        ? `目前有 ${count} 筆帳目使用「${payName}」。刪除後，這些歷史帳目將自動安全歸類至「其他」中，不會遺失任何金額。確定刪除嗎？`
+        : `確定要刪除付款方式「${payName}」嗎？`;
+
+      openCustomConfirm(`刪除付款方式「${payName}」`, desc, () => {
+        if (!appState.payments.includes('其他')) {
+          appState.payments.push('其他');
+        }
+        appState.payments = appState.payments.filter(p => p !== payName);
+
+        appState.expenses.forEach(item => {
+          if ((item.paymentMethod || '現金 (JPY)') === payName) {
+            item.paymentMethod = '其他';
+          }
         });
 
+        if (appState.selectedFilterPayment === payName) {
+          appState.selectedFilterPayment = '全部';
+        }
+
+        savePaymentsToStorage();
+        saveExpensesToStorage();
+        renderExpensesTab();
+        showToast(`🗑️ 已刪除付款方式「${payName}」`);
+      });
+    }
+
+    /* ---------------- 類別自由管理（新增、編輯重新命名、刪除安全歸類） ---------------- */
+    function toggleCategoryManager() {
+      const panel = document.getElementById('categoryManagerPanel');
+      panel.classList.toggle('hidden');
+      if (!panel.classList.contains('hidden')) {
+        renderCategoryManagerList();
+      }
+    }
+
+    function renderCategoryManagerList() {
+      const container = document.getElementById('categoryManagerList');
+      if (!container) return;
+
+      container.innerHTML = appState.categories.map(cat => {
+        const isProtectedOther = cat === '其他';
+        const usedCount = appState.expenses.filter(e => e.category === cat).length;
+
+        return `
+          <div class="p-2.5 rounded-xl bg-parchment border border-woodBorder flex items-center justify-between gap-2">
+            <div class="min-w-0">
+              <span class="text-xs sm:text-sm font-bold text-ink truncate block">${escapeHtml(cat)}</span>
+              <span class="text-[11px] text-inkMuted">關聯 ${usedCount} 筆帳目</span>
+            </div>
+            ${isProtectedOther ? `
+              <span class="text-[11px] px-2 py-0.5 rounded bg-woodBorder/60 text-inkMuted shrink-0">系統保留</span>
+            ` : `
+              <div class="flex items-center gap-1 shrink-0">
+                <button
+                  type="button"
+                  onclick="promptRenameCategory('${escapeHtml(cat)}')"
+                  class="px-2 py-1 rounded-lg bg-white border border-woodBorder text-[11px] font-bold text-ink hover:bg-ginkgoLight/50"
+                >
+                  重命名
+                </button>
+                <button
+                  type="button"
+                  onclick="confirmDeleteCategory('${escapeHtml(cat)}')"
+                  class="px-2 py-1 rounded-lg bg-red-50 border border-red-200 text-[11px] font-bold text-maple hover:bg-red-100"
+                >
+                  刪除
+                </button>
+              </div>
+            `}
+          </div>
+        `;
+      }).join('');
+    }
+
+    function handleAddCategoryFromManager() {
+      const input = document.getElementById('newCategoryManagerInput');
+      const name = input.value.trim();
+      if (!name) {
+        showToast('⚠️ 請輸入類別名稱');
+        return;
+      }
+      if (appState.categories.includes(name)) {
+        showToast('⚠️ 此類別名稱已經存在');
+        return;
+      }
+      appState.categories.push(name);
+      saveCategoriesToStorage();
+      input.value = '';
+      renderCategoryManagerList();
+      renderCategoryFilterBar();
+      showToast(`🏷️ 已新增類別「${name}」`);
+    }
+
+    function promptRenameCategory(oldName) {
+      const newName = window.prompt(`請輸入「${oldName}」的新類別名稱：`, oldName);
+      if (newName === null) return;
+      const trimmed = newName.trim();
+      if (!trimmed || trimmed === oldName) return;
+      if (appState.categories.includes(trimmed)) {
+        showToast('⚠️ 此類別名稱已存在，請使用其他名稱');
+        return;
+      }
+
+      const idx = appState.categories.indexOf(oldName);
+      if (idx !== -1) appState.categories[idx] = trimmed;
+
+      appState.expenses.forEach(item => {
+        if (item.category === oldName) {
+          item.category = trimmed;
+        }
+      });
+
+      if (appState.selectedFilterCategory === oldName) {
+        appState.selectedFilterCategory = trimmed;
+      }
+
+      saveCategoriesToStorage();
+      saveExpensesToStorage();
+      renderExpensesTab();
+      showToast(`✅ 已將「${oldName}」重新命名為「${trimmed}」`);
+    }
+
+    function confirmDeleteCategory(catName) {
+      if (catName === '其他') return;
+      const count = appState.expenses.filter(e => e.category === catName).length;
+      const desc = count > 0
+        ? `目前有 ${count} 筆帳目屬於「${catName}」。刪除後，這些歷史帳目將自動安全歸類至「其他」中，不會遺失任何金額。確定刪除嗎？`
+        : `確定要刪除類別「${catName}」嗎？`;
+
+      openCustomConfirm(`刪除類別「${catName}」`, desc, () => {
+        if (!appState.categories.includes('其他')) {
+          appState.categories.push('其他');
+        }
+        appState.categories = appState.categories.filter(c => c !== catName);
+
+        appState.expenses.forEach(item => {
+          if (item.category === catName) {
+            item.category = '其他';
+          }
+        });
+
+        if (appState.selectedFilterCategory === catName) {
+          appState.selectedFilterCategory = '全部';
+        }
+
+        saveCategoriesToStorage();
+        saveExpensesToStorage();
+        renderExpensesTab();
+        showToast(`🗑️ 已刪除類別「${catName}」`);
+      });
+    }
+
+    /* ---------------- 匯出 CSV / JSON 與 匯入還原 ---------------- */
+    function exportExpensesCSV() {
+      if (appState.expenses.length === 0) {
+        showToast('⚠️ 目前尚無記帳紀錄可匯出');
+        return;
+      }
+
+      const sorted = [...appState.expenses].sort((a, b) => Number(a.day) - Number(b.day));
+      const headers = ['天數(Day)', '日期', '行程/項目名稱', '花費類別', '付款方式', '日圓金額(JPY)', `台幣估算(匯率 ${appState.exchangeRate})`, '備註'];
+      const rows = sorted.map(rec => {
+        const dayInfo = itineraryData.find(d => d.day === Number(rec.day));
+        const dateStr = dayInfo ? dayInfo.date : '';
+        const twdVal = Math.round((Number(rec.amountJpy) || 0) * appState.exchangeRate);
+        return [
+          `Day ${rec.day}`,
+          dateStr,
+          `"${String(rec.activityTitle || '').replace(/"/g, '""')}"`,
+          `"${String(rec.category || '').replace(/"/g, '""')}"`,
+          `"${String(rec.paymentMethod || '現金 (JPY)').replace(/"/g, '""')}"`,
+          rec.amountJpy,
+          twdVal,
+          `"${String(rec.note || '').replace(/"/g, '""')}"`
+        ].join(',');
+      });
+
       const csvContent = '\uFEFF' + [headers.join(','), ...rows].join('\n');
-      triggerDownload(csvContent, `kyushu_2026_expenses_${getTodayFileStamp()}.csv`, 'text/csv;charset=utf-8;');
-      showToast('已匯出 CSV 旅費明細表（含付款方式）');
+      const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `2026九州11日賞楓記帳本_${new Date().toISOString().slice(0, 10)}.csv`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+      showToast('📥 已匯出 Excel / CSV 報表');
     }
 
     function exportExpensesJSON() {
       const payload = {
-        app: '2026 九州 11 日賞楓手札',
+        version: 2,
         exportedAt: new Date().toISOString(),
-        exchangeRate: state.exchangeRate,
-        categories: state.categories,
-        paymentMethods: state.paymentMethods,
-        expenses: state.expenses.map(e => ({
-          ...e,
-          paymentMethod: e.paymentMethod || '現金'
-        }))
+        exchangeRate: appState.exchangeRate,
+        categories: appState.categories,
+        payments: appState.payments,
+        expenses: appState.expenses
       };
-      triggerDownload(JSON.stringify(payload, null, 2), `kyushu_2026_backup_${getTodayFileStamp()}.json`, 'application/json');
-      showToast('已下載 JSON 完整備份檔');
+      const blob = new Blob([JSON.stringify(payload, null, 2)], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `kyushu2026_backup_${new Date().toISOString().slice(0, 10)}.json`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+      showToast('💾 已下載 JSON 完整備份檔');
     }
 
     function importExpensesJSON(event) {
@@ -6027,44 +5749,40 @@
       const reader = new FileReader();
       reader.onload = function(e) {
         try {
-          const parsed = JSON.parse(e.target.result);
-          if (!parsed || !Array.isArray(parsed.expenses)) {
+          const data = JSON.parse(e.target.result);
+          if (!data || !Array.isArray(data.expenses)) {
             throw new Error('格式不符');
           }
-          showConfirmModal(
-            '匯入 JSON 備份還原',
-            `偵測到備份檔內含 ${parsed.expenses.length} 筆花費紀錄，是否覆蓋並還原至目前裝置？`,
+
+          openCustomConfirm(
+            '還原 JSON 記帳備份',
+            `偵測到備份檔內含 ${data.expenses.length} 筆花費紀錄，是否覆蓋並還原至目前裝置？`,
             () => {
-              state.expenses = parsed.expenses.map(item => ({
+              appState.expenses = data.expenses.map(item => ({
                 ...item,
-                paymentMethod: (item.paymentMethod && String(item.paymentMethod).trim()) ? String(item.paymentMethod).trim() : '現金'
+                paymentMethod: item.paymentMethod || '現金 (JPY)'
               }));
-              if (Array.isArray(parsed.categories) && parsed.categories.length > 0) {
-                state.categories = parsed.categories;
+              if (Array.isArray(data.categories) && data.categories.length > 0) {
+                appState.categories = data.categories;
                 saveCategoriesToStorage();
               }
-              if (Array.isArray(parsed.paymentMethods) && parsed.paymentMethods.length > 0) {
-                state.paymentMethods = parsed.paymentMethods;
-                savePaymentMethodsToStorage();
-              } else {
-                // 若舊版備份檔無 paymentMethods 陣列，自動將匯入紀錄中的付款方式納入清單
-                state.expenses.forEach(exp => {
-                  if (exp.paymentMethod && !state.paymentMethods.includes(exp.paymentMethod)) {
-                    addCustomPaymentMethod(exp.paymentMethod);
-                  }
-                });
+              if (Array.isArray(data.payments) && data.payments.length > 0) {
+                appState.payments = data.payments;
+                savePaymentsToStorage();
               }
-              if (typeof parsed.exchangeRate === 'number' && parsed.exchangeRate > 0) {
-                saveExchangeRateToStorage(parsed.exchangeRate, '匯入備份匯率');
+              if (data.exchangeRate && Number(data.exchangeRate) > 0) {
+                appState.exchangeRate = Number(data.exchangeRate);
+                saveRateToStorage();
               }
               saveExpensesToStorage();
-              renderExpensesDashboard();
-              renderDayContent(state.selectedDay);
-              showToast(`成功還原 ${state.expenses.length} 筆記帳紀錄！`);
+              renderExpensesTab();
+              renderDaySelectorBar();
+              renderDayContent(appState.selectedDay);
+              showToast(`📤 已成功還原 ${appState.expenses.length} 筆紀錄！`);
             }
           );
         } catch (err) {
-          showToast('JSON 檔案格式錯誤，無法匯入');
+          showToast('⚠️ 檔案格式錯誤，請選擇正確的 JSON 備份檔');
         } finally {
           event.target.value = '';
         }
@@ -6072,178 +5790,24 @@
       reader.readAsText(file);
     }
 
-    function triggerDownload(content, filename, mimeType) {
-      const blob = new Blob([content], { type: mimeType });
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      a.href = url;
-      a.download = filename;
-      document.body.appendChild(a);
-      a.click();
-      document.body.removeChild(a);
-      URL.revokeObjectURL(url);
-    }
-
-    function getTodayFileStamp() {
-      const d = new Date();
-      return `${d.getFullYear()}${String(d.getMonth() + 1).padStart(2, '0')}${String(d.getDate()).padStart(2, '0')}`;
-    }
-
     /* ==========================================================================
-       九、吉卜力楓葉飄落動畫、一鍵複製、客製確認框與安全工具函式
-       ========================================================================== */
-    function initMapleLeaves() {
-      const layer = document.getElementById('mapleLeafLayer');
-      if (!layer) return;
-
-      updateLeavesVisibility();
-
-      const leafColors = ['#C84B31', '#D99B26', '#B83B24', '#E07A38', '#C68B2C'];
-      const leafCount = 9; // 輕量化數量，兼具吉卜力詩意與極致流暢效能
-      let html = '';
-
-      for (let i = 0; i < leafCount; i++) {
-        const left = (i * 11 + 4) % 96;
-        const duration = 14 + (i % 5) * 3.2;
-        const delay = -(i * 2.3);
-        const size = 14 + (i % 3) * 4;
-        const color = leafColors[i % leafColors.length];
-
-        html += `
-          <div
-            class="falling-leaf"
-            style="left:${left}%; animation-duration:${duration}s; animation-delay:${delay}s; color:${color};"
-          >
-            <svg width="${size}" height="${size}" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M12 2L14.2 7.5L19.5 6L17 11.2L22 13.5L16.5 16L17.5 20.5L12.8 18V22H11.2V18L6.5 20.5L7.5 16L2 13.5L7 11.2L4.5 6L9.8 7.5L12 2Z"/>
-            </svg>
-          </div>
-        `;
-      }
-      layer.innerHTML = html;
-    }
-
-    function toggleLeaves() {
-      state.leavesEnabled = !state.leavesEnabled;
-      localStorage.setItem(STORAGE_KEYS.LEAVES_ENABLED, String(state.leavesEnabled));
-      updateLeavesVisibility();
-    }
-
-    function updateLeavesVisibility() {
-      const layer = document.getElementById('mapleLeafLayer');
-      const statusText = document.getElementById('leafStatusText');
-      if (layer) layer.style.display = state.leavesEnabled ? 'block' : 'none';
-      if (statusText) statusText.textContent = state.leavesEnabled ? '飄葉開' : '飄葉關';
-    }
-
-    function copyJapaneseName(text) {
-      if (!text) return;
-      if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(text)
-          .then(() => showToast(`已複製日文名稱：「${text}」`))
-          .catch(() => fallbackCopyText(text));
-      } else {
-        fallbackCopyText(text);
-      }
-    }
-
-    function fallbackCopyText(text) {
-      const ta = document.createElement('textarea');
-      ta.value = text;
-      ta.style.position = 'fixed';
-      ta.style.opacity = '0';
-      document.body.appendChild(ta);
-      ta.select();
-      try {
-        document.execCommand('copy');
-        showToast(`已複製日文名稱：「${text}」`);
-      } catch (e) {
-        showToast('複製失敗，請手動選取複製');
-      }
-      document.body.removeChild(ta);
-    }
-
-    let toastTimer = null;
-    function showToast(message) {
-      const box = document.getElementById('toastNotification');
-      const txt = document.getElementById('toastText');
-      if (!box || !txt) return;
-      txt.textContent = message;
-      box.classList.remove('opacity-0');
-      box.classList.add('opacity-100');
-      clearTimeout(toastTimer);
-      toastTimer = setTimeout(() => {
-        box.classList.remove('opacity-100');
-        box.classList.add('opacity-0');
-      }, 2400);
-    }
-
-    // 客製化確認對話框（完全取代瀏覽器原生 confirm()，防誤觸且在手機版與 WebView 100% 正常運作）
-    function showConfirmModal(title, message, onConfirmCallback) {
-      const modal = document.getElementById('customConfirmModal');
-      document.getElementById('confirmModalTitle').textContent = title;
-      document.getElementById('confirmModalMessage').textContent = message;
-
-      const cancelBtn = document.getElementById('confirmCancelBtn');
-      const okBtn = document.getElementById('confirmOkBtn');
-
-      const closeConfirm = () => {
-        modal.classList.add('hidden');
-        modal.classList.remove('flex');
-      };
-
-      cancelBtn.onclick = closeConfirm;
-      okBtn.onclick = () => {
-        closeConfirm();
-        if (typeof onConfirmCallback === 'function') {
-          onConfirmCallback();
-        }
-      };
-
-      modal.classList.remove('hidden');
-      modal.classList.add('flex');
-    }
-
-    function escapeHtml(str) {
-      if (str === null || str === undefined) return '';
-      return String(str)
-        .replace(/&/g, '&amp;')
-        .replace(/</g, '&lt;')
-        .replace(/>/g, '&gt;')
-        .replace(/"/g, '&quot;')
-        .replace(/'/g, '&#39;');
-    }
-
-    function escapeAttr(str) {
-      return escapeHtml(str).replace(/\\/g, '\\\\');
-    }
-
-    /* ==========================================================================
-       十、應用程式初始化啟動
+       十、應用程式初始化
        ========================================================================== */
     document.addEventListener('DOMContentLoaded', () => {
       loadAppState();
       initMapleLeaves();
-      updateHeaderTotalBadge();
+      renderDaySelectorBar();
+      renderDayContent(appState.selectedDay);
       updateRateUI();
-      renderDaySelector();
-      renderDayContent(state.selectedDay);
       fetchLiveExchangeRate(false);
-
-      // 點擊彈窗背景關閉彈窗
-      ['activityExpenseModal', 'globalExpenseModal', 'activityInfoModal'].forEach(modalId => {
-        const modalEl = document.getElementById(modalId);
-        if (modalEl) {
-          modalEl.addEventListener('click', (e) => {
-            if (e.target === modalEl) {
-              if (modalId === 'activityExpenseModal') closeActivityExpenseModal();
-              if (modalId === 'globalExpenseModal') closeGlobalExpenseModal();
-              if (modalId === 'activityInfoModal') closeActivityInfoModal();
-            }
-          });
-        }
-      });
     });
+  </script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./sw.js').catch(() => {});
+      });
+    }
   </script>
 </body>
 </html>
