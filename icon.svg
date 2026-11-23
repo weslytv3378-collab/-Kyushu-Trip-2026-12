@@ -1,0 +1,286 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <!-- 手機 App 圓角裁切遮罩 -->
+    <clipPath id="app-icon-clip">
+      <rect x="0" y="0" width="512" height="512" rx="112" ry="112"/>
+    </clipPath>
+
+    <!-- 背景天空漸層（還原照片陰天柔和霧白感） -->
+    <linearGradient id="sky-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#F6F8F6"/>
+      <stop offset="65%" stop-color="#EAEFEA"/>
+      <stop offset="100%" stop-color="#DCE4DF"/>
+    </linearGradient>
+
+    <!-- 海面漸層（平靜灰藍綠海色） -->
+    <linearGradient id="sea-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#9EB1AE"/>
+      <stop offset="55%" stop-color="#879D9A"/>
+      <stop offset="100%" stop-color="#6F8683"/>
+    </linearGradient>
+
+    <!-- 深色沙灘漸層 -->
+    <linearGradient id="sand-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#5B594F"/>
+      <stop offset="45%" stop-color="#48463E"/>
+      <stop offset="100%" stop-color="#37352E"/>
+    </linearGradient>
+
+    <!-- 膚色漸層 -->
+    <linearGradient id="skin-grad" x1="20%" y1="0%" x2="80%" y2="100%">
+      <stop offset="0%" stop-color="#E6B696"/>
+      <stop offset="60%" stop-color="#D5A180"/>
+      <stop offset="100%" stop-color="#BD8767"/>
+    </linearGradient>
+
+    <!-- 手臂立體光影漸層 -->
+    <linearGradient id="arm-left-grad" x1="0%" y1="0%" x2="100%" y2="60%">
+      <stop offset="0%" stop-color="#E8B99A"/>
+      <stop offset="65%" stop-color="#D4A07F"/>
+      <stop offset="100%" stop-color="#B88263"/>
+    </linearGradient>
+
+    <linearGradient id="arm-right-grad" x1="100%" y1="0%" x2="0%" y2="60%">
+      <stop offset="0%" stop-color="#E5B595"/>
+      <stop offset="65%" stop-color="#D09C7B"/>
+      <stop offset="100%" stop-color="#B57F60"/>
+    </linearGradient>
+
+    <!-- 黑色衣物深淺層次 -->
+    <linearGradient id="cloth-grad" x1="25%" y1="0%" x2="75%" y2="100%">
+      <stop offset="0%" stop-color="#25282D"/>
+      <stop offset="45%" stop-color="#17191C"/>
+      <stop offset="100%" stop-color="#0E1012"/>
+    </linearGradient>
+
+    <!-- 頭髮柔和光澤 -->
+    <linearGradient id="hair-grad" x1="30%" y1="0%" x2="70%" y2="100%">
+      <stop offset="0%" stop-color="#272A30"/>
+      <stop offset="50%" stop-color="#141518"/>
+      <stop offset="100%" stop-color="#0B0C0E"/>
+    </linearGradient>
+
+    <!-- 地面環境陰影 -->
+    <radialGradient id="ground-shadow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#1E1D18" stop-opacity="0.72"/>
+      <stop offset="70%" stop-color="#26251F" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#37352E" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- 整體套用圓角遮罩 -->
+  <g clip-path="url(#app-icon-clip)">
+    <!-- 1. 天空背景 -->
+    <rect x="0" y="0" width="512" height="198" fill="url(#sky-grad)"/>
+    <!-- 吉卜力風柔和雲層筆觸 -->
+    <path d="M-10 92 Q 95 76, 210 90 T 430 85 T 530 95 L 530 140 L -10 140 Z" fill="#FFFFFF" opacity="0.35"/>
+    <path d="M-10 148 Q 130 138, 270 146 T 530 142 L 530 198 L -10 198 Z" fill="#FFFFFF" opacity="0.28"/>
+
+    <!-- 2. 海面與海浪 -->
+    <rect x="0" y="196" width="512" height="90" fill="url(#sea-grad)"/>
+    <!-- 遠處海面波紋 -->
+    <path d="M0 208 Q 85 205, 170 208 T 340 207 T 512 209" fill="none" stroke="#B7C7C4" stroke-width="2" opacity="0.7"/>
+    <path d="M0 223 Q 110 220, 220 224 T 420 222 T 512 224" fill="none" stroke="#5B726F" stroke-width="2.5" opacity="0.55"/>
+    <!-- 白色浪花帶（對應照片中的兩道水平白浪） -->
+    <path d="M-5 242 Q 65 238, 135 242 T 275 240 T 415 243 T 520 241 L 520 249 Q 410 251, 275 248 T 135 250 T -5 248 Z" fill="#EEF3F1" opacity="0.88"/>
+    <path d="M-5 266 Q 90 263, 185 267 T 375 265 T 520 268 L 520 274 Q 375 271, 185 273 T -5 271 Z" fill="#E3EAE8" opacity="0.75"/>
+    <!-- 岸邊濕潤水線 -->
+    <path d="M0 282 Q 140 279, 280 283 T 512 281 L 512 292 L 0 292 Z" fill="#46534F" opacity="0.85"/>
+
+    <!-- 3. 深色沙灘與沙紋 -->
+    <rect x="0" y="285" width="512" height="227" fill="url(#sand-grad)"/>
+    <!-- 沙灘起伏波紋陰影 -->
+    <path d="M18 322 Q 62 315, 105 324 T 190 320" fill="none" stroke="#31302A" stroke-width="5" stroke-linecap="round" opacity="0.55"/>
+    <path d="M365 316 Q 425 310, 485 320" fill="none" stroke="#31302A" stroke-width="5" stroke-linecap="round" opacity="0.55"/>
+    <path d="M12 395 Q 58 386, 102 398" fill="none" stroke="#2D2C26" stroke-width="7" stroke-linecap="round" opacity="0.6"/>
+    <path d="M405 388 Q 452 378, 498 392" fill="none" stroke="#2D2C26" stroke-width="7" stroke-linecap="round" opacity="0.6"/>
+    <path d="M25 458 Q 75 448, 118 462" fill="none" stroke="#69675D" stroke-width="4" stroke-linecap="round" opacity="0.35"/>
+    <path d="M398 446 Q 445 438, 492 452" fill="none" stroke="#69675D" stroke-width="4" stroke-linecap="round" opacity="0.35"/>
+
+    <!-- 人物底部環境陰影 -->
+    <ellipse cx="250" cy="472" rx="165" ry="48" fill="url(#ground-shadow)"/>
+
+    <!-- 4. 人物下半身：盤屈坐姿長褲與赤腳 -->
+    <g id="person-legs">
+      <!-- 畫面左側赤腳踝 -->
+      <path d="M142 490 L 166 490 L 176 515 L 134 515 Z" fill="url(#skin-grad)"/>
+      <!-- 畫面右側赤腳與腳背 -->
+      <path d="M348 456 L 376 454 C 380 472, 386 490, 404 506 L 408 515 L 348 515 C 348 494, 347 474, 348 456 Z" fill="url(#skin-grad)"/>
+      <path d="M348 456 L 376 454 L 378 468 L 348 470 Z" fill="#B27D5F" opacity="0.55"/>
+
+      <!-- 黑色長褲主體（雙膝屈起向外張開） -->
+      <path d="M168 388
+               C 138 355, 118 352, 114 378
+               C 110 408, 122 465, 134 504
+               L 172 500
+               C 168 468, 165 442, 168 424
+               C 208 448, 286 446, 336 420
+               C 340 436, 342 452, 342 466
+               L 382 464
+               C 382 420, 380 368, 368 348
+               C 356 330, 326 346, 294 382
+               Z" fill="url(#cloth-grad)"/>
+
+      <!-- 褲管立體皺摺高光（避免全黑糊成一團） -->
+      <path d="M126 376 C 122 405, 128 450, 140 492" fill="none" stroke="#2D3138" stroke-width="3.5" stroke-linecap="round" opacity="0.65"/>
+      <path d="M362 356 C 370 385, 372 422, 372 456" fill="none" stroke="#2D3138" stroke-width="3.5" stroke-linecap="round" opacity="0.65"/>
+      <path d="M188 418 Q 250 432, 312 414" fill="none" stroke="#272A30" stroke-width="3" stroke-linecap="round" opacity="0.6"/>
+    </g>
+
+    <!-- 5. 人物上半身：黑色圓領短袖 T 恤 -->
+    <g id="person-torso">
+      <path d="M185 266
+               C 162 272, 145 282, 136 306
+               L 124 332
+               L 164 346
+               L 172 396
+               C 212 410, 272 408, 298 392
+               L 296 342
+               L 330 326
+               C 320 296, 304 276, 276 266
+               C 254 258, 244 256, 236 256
+               L 196 258
+               Z" fill="url(#cloth-grad)"/>
+
+      <!-- 肩線與胸口布料微光 -->
+      <path d="M142 304 C 152 284, 168 274, 186 269" fill="none" stroke="#32363E" stroke-width="3" stroke-linecap="round" opacity="0.7"/>
+      <path d="M274 269 C 296 276, 312 292, 323 320" fill="none" stroke="#32363E" stroke-width="3" stroke-linecap="round" opacity="0.7"/>
+      <path d="M192 262 Q 216 284, 242 260" fill="none" stroke="#2E323A" stroke-width="3.5" stroke-linecap="round"/>
+    </g>
+
+    <!-- 6. 雙臂與自然垂放於膝前的雙手 -->
+    <g id="person-arms">
+      <!-- 畫面左側手臂（手肘靠左膝、前臂斜向內側垂放） -->
+      <path d="M135 322
+               C 118 345, 108 362, 112 376
+               C 116 390, 142 418, 152 436
+               C 150 452, 146 472, 148 485
+               C 150 489, 154 488, 155 482
+               L 158 462
+               L 161 488
+               C 162 492, 167 492, 168 487
+               L 170 462
+               L 174 486
+               C 175 490, 180 489, 180 484
+               L 180 460
+               L 185 480
+               C 186 484, 191 483, 191 478
+               C 190 460, 185 442, 176 428
+               C 162 406, 146 384, 142 370
+               C 146 356, 154 342, 160 332
+               Z" fill="url(#arm-left-grad)"/>
+      <!-- 左手指縫細節線 -->
+      <path d="M158 456 L 156 482 M 169 456 L 168 486 M 179 455 L 180 483" stroke="#9C694D" stroke-width="1.5" stroke-linecap="round" opacity="0.75"/>
+
+      <!-- 畫面右側手臂（手肘靠右膝、前臂斜向內側垂放） -->
+      <path d="M298 326
+               C 320 342, 344 352, 352 364
+               C 346 382, 330 406, 320 426
+               C 312 440, 308 458, 308 475
+               C 308 480, 313 481, 314 476
+               L 318 456
+               L 318 483
+               C 318 488, 323 488, 324 483
+               L 327 458
+               L 329 485
+               C 330 490, 335 489, 336 484
+               L 337 458
+               L 341 480
+               C 342 484, 347 483, 347 478
+               C 348 462, 345 444, 341 430
+               C 356 408, 376 382, 378 364
+               C 380 348, 354 328, 325 314
+               Z" fill="url(#arm-right-grad)"/>
+      <!-- 右手指縫細節線 -->
+      <path d="M318 452 L 316 476 M 327 453 L 325 482 M 337 453 L 336 482" stroke="#9C694D" stroke-width="1.5" stroke-linecap="round" opacity="0.75"/>
+    </g>
+
+    <!-- 7. 頸部、頭部、眼鏡與微笑神韻 -->
+    <g id="person-head" transform="rotate(-3 215 225)">
+      <!-- 頸部 -->
+      <path d="M196 250 L 234 250 L 238 274 Q 215 284, 192 274 Z" fill="url(#skin-grad)"/>
+      <!-- 下巴投射於頸部的柔和陰影 -->
+      <path d="M196 252 Q 215 268, 234 252 L 235 262 Q 215 274, 195 262 Z" fill="#A97457" opacity="0.65"/>
+
+      <!-- 雙耳 -->
+      <ellipse cx="176" cy="228" rx="6.5" ry="12" fill="#CFA080"/>
+      <ellipse cx="253" cy="226" rx="6.5" ry="12" fill="#C79676"/>
+
+      <!-- 臉型輪廓 -->
+      <path d="M179 204
+               C 178 230, 184 250, 200 260
+               C 208 265, 222 265, 230 260
+               C 246 250, 251 230, 250 204
+               C 249 184, 234 176, 214 176
+               C 194 176, 180 184, 179 204 Z" fill="url(#skin-grad)"/>
+
+      <!-- 臉頰與鼻翼柔和暖色調 -->
+      <ellipse cx="194" cy="238" rx="9" ry="5.5" fill="#C98872" opacity="0.28"/>
+      <ellipse cx="235" cy="237" rx="9" ry="5.5" fill="#C98872" opacity="0.28"/>
+
+      <!-- 眉毛 -->
+      <path d="M187 212 Q 197 208, 207 211" fill="none" stroke="#1E1C1B" stroke-width="3.2" stroke-linecap="round"/>
+      <path d="M222 211 Q 232 208, 242 211" fill="none" stroke="#1E1C1B" stroke-width="3.2" stroke-linecap="round"/>
+
+      <!-- 雙眼（溫和笑眼） -->
+      <path d="M190 222 Q 198 218, 205 222" fill="none" stroke="#1E1B1A" stroke-width="2.4" stroke-linecap="round"/>
+      <circle cx="198" cy="222.5" r="2.6" fill="#1E1B1A"/>
+      <circle cx="199" cy="221.5" r="0.9" fill="#FFFFFF"/>
+
+      <path d="M224 222 Q 232 218, 239 222" fill="none" stroke="#1E1B1A" stroke-width="2.4" stroke-linecap="round"/>
+      <circle cx="231" cy="222.5" r="2.6" fill="#1E1B1A"/>
+      <circle cx="232" cy="221.5" r="0.9" fill="#FFFFFF"/>
+
+      <!-- 鼻子 -->
+      <path d="M214 220 L 212 234 Q 215 237, 219 235" fill="none" stroke="#A67154" stroke-width="2" stroke-linecap="round"/>
+
+      <!-- 親切自然的微笑 -->
+      <path d="M203 245 Q 215 251, 227 245" fill="none" stroke="#8C5343" stroke-width="2.3" stroke-linecap="round"/>
+      <path d="M208 249.5 Q 215 252, 222 249.5" fill="none" stroke="#B67C65" stroke-width="1.5" stroke-linecap="round" opacity="0.7"/>
+
+      <!-- 細框圓形金屬眼鏡 -->
+      <g id="glasses">
+        <!-- 左鏡框 -->
+        <ellipse cx="197" cy="222" rx="14.5" ry="11.5" fill="#FFFFFF" fill-opacity="0.12" stroke="#2D2A29" stroke-width="2.3"/>
+        <!-- 右鏡框 -->
+        <ellipse cx="232" cy="222" rx="14.5" ry="11.5" fill="#FFFFFF" fill-opacity="0.12" stroke="#2D2A29" stroke-width="2.3"/>
+        <!-- 鼻橋與鏡腳 -->
+        <path d="M211.5 221 Q 214.5 219, 217.5 221" fill="none" stroke="#2D2A29" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M178 221 L 182.5 221.5 M 246.5 221.5 L 251 220.5" stroke="#2D2A29" stroke-width="2" stroke-linecap="round"/>
+        <!-- 鏡片微反光 -->
+        <path d="M189 216 L 194 225" stroke="#FFFFFF" stroke-width="1.4" stroke-linecap="round" opacity="0.45"/>
+        <path d="M224 216 L 229 225" stroke="#FFFFFF" stroke-width="1.4" stroke-linecap="round" opacity="0.45"/>
+      </g>
+
+      <!-- 黑色短髮（微向右側分線、蓬鬆自然） -->
+      <path d="M177 214
+               C 172 195, 178 175, 198 169
+               C 214 164, 234 167, 246 179
+               C 255 188, 256 202, 252 215
+               C 250 204, 246 196, 240 192
+               C 231 187, 219 188, 208 193
+               C 197 198, 187 201, 181 206
+               C 179 209, 178 212, 177 214 Z" fill="url(#hair-grad)"/>
+      <!-- 髮絲自然層次 -->
+      <path d="M196 174 Q 214 170, 232 176" fill="none" stroke="#363B44" stroke-width="2" stroke-linecap="round" opacity="0.65"/>
+      <path d="M244 176 L 250 171 M 248 182 L 254 179" stroke="#181A1E" stroke-width="1.8" stroke-linecap="round"/>
+    </g>
+
+    <!-- 8. 九州賞楓旅遊主題點綴（兩片飄落的秋楓葉） -->
+    <g opacity="0.9">
+      <!-- 左上角小楓葉 -->
+      <g transform="translate(76, 68) rotate(-18) scale(0.42)">
+        <path d="M0 -45 L 10 -15 L 38 -25 L 22 2 L 48 12 L 20 26 L 28 52 L 0 38 L -28 52 L -20 26 L -48 12 L -22 2 L -38 -25 L -10 -15 Z" fill="#C84B31"/>
+        <path d="M0 36 L 0 64" stroke="#8C311E" stroke-width="4" stroke-linecap="round"/>
+      </g>
+      <!-- 右上角金橘小楓葉 -->
+      <g transform="translate(432, 86) rotate(24) scale(0.36)">
+        <path d="M0 -45 L 10 -15 L 38 -25 L 22 2 L 48 12 L 20 26 L 28 52 L 0 38 L -28 52 L -20 26 L -48 12 L -22 2 L -38 -25 L -10 -15 Z" fill="#D97B29"/>
+        <path d="M0 36 L 0 64" stroke="#965015" stroke-width="4" stroke-linecap="round"/>
+      </g>
+    </g>
+
+    <!-- 柔和內框邊線，讓深淺桌面桌布都能清晰凸顯圖示 -->
+    <rect x="2" y="2" width="508" height="508" rx="110" ry="110" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-opacity="0.35"/>
+  </g>
+</svg>
